@@ -1,4 +1,10 @@
 
+//se nao tiver repositorio local
+git init
+
+//se nao tiver repositorio remoto
+git remote add origin "link do github"
+
 //para adionar ao .git repositorio local
 git add .
 
