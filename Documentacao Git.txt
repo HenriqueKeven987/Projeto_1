@@ -1,0 +1,45 @@
+
+//estados dos arquivos no git
+nao monitorado == nao esta no repositorio local mas esta na mesma pasta do repositorio .git
+modificado == foi adicionado ao .git local mais foi alterado
+preparado == arquivos que estao prontos para serem commitados
+consolidado == foi commitado e esta pronto para ser enviado ao repositorio remoto
+
+//vai mostrar a oq foi alterado nos ultimos commits HEAD~1 vai mostrar o ultimo ja HEAD~2 o penultimo
+//e o diff mostra o historico de alteracoes
+git diff HEAD~1
+
+//o comando q mostra o status de todos os arquivos no diretorio git local
+git status
+
+//desfazer alteracoes q foram feitas no arquivo
+git checkout --nomeDoArquivo
+
+//alterar o editor de codigo padrao
+git config --global core.editor nomeDoEditor
+
+//mostrar os commitis e arquivos alterados que nao para nenhum repositorio
+git log
+
+//mostra os diretorios remotos que estao conectados ao seu git
+git remote -v
+
+//se nao tiver repositorio local
+git init
+
+//se nao tiver repositorio remoto
+git remote add origin "link do github"
+
+//se nao conseguir enviar os commits E pq voce precissa sincronizar com o comando
+git fetch
+
+//para adionar ao .git repositorio local
+git add .
+
+//para dizer qual foi a alteracao feita
+git commit -m "alteracao" 
+
+//envio para o repositorio remoto github no caso
+git push
+
+
