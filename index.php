@@ -1,7 +1,8 @@
 <?php 
 	include('config.php'); 
 ?>
-<!DOCTYPE html> 
+
+<!DOCTYPE html>
 <html>
 <head>
 	<title>Projeto 01</title>
