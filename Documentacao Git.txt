@@ -12,6 +12,12 @@ git diff HEAD~1
 //o comando q mostra o status de todos os arquivos no diretorio git local
 git status
 
+//primeira coisa a se fazer quando em outra maquina e ciente q o arquivo foi alterado
+git pull 
+
+//baixar direto do repositorio remoto
+git clone <url>
+
 //desfazer alteracoes q foram feitas no arquivo
 git checkout --nomeDoArquivo
 

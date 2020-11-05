@@ -1,7 +1,6 @@
 <?php 
 	include('config.php'); 
 ?>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,6 +15,24 @@
 	<meta charset="utf-8"/>
 </head>
 <body>
+
+	<?php 
+
+		$url = isset($_GET['url']) ? $_GET['url'] : 'home' ;
+		switch ($url) {
+			
+			case 'sobre':
+					//target indica abrir documento vinculado
+					echo '<target target="sobre"/>  ';
+
+			break;
+			
+			case 'servicos':
+					//target indica abrir documento vinculado
+					echo '<target target="servicos"/>  ';
+			break;
+		}
+	?>
 	<header>
 		<div class="center">
 			<div class="logo left"><a href="/">CRASH</a></div><!--logo-->
@@ -51,9 +68,15 @@
 		if (file_exists('pages/'.$url.'.php')) {
 			include('pages/'.$url.'.php');
 		}else{
-			//se nao achar o arquivo de pagina acima 
-			$pagina404 = true;
-			include('pages/404.php');
+			//se nao achar o arquivo de pagina acima
+
+			if ($url != 'sobre' && $url != 'servicos') { 	
+				$pagina404 = true;
+				include('pages/404.php');
+
+			}else{
+				include('pages/home.php');
+			}	
 		}
 
 	?>

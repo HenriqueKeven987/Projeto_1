@@ -67,7 +67,7 @@ $(function(){
 		});
 		  	if(showInfoWindow == undefined){
 		        google.maps.event.addListener(marker, 'click', function () {
-		              infoWindow.open(map, marker);
+		              infoWindow.open(map, marker); 
 		         });
 	    	}else if(openInfoWindow == true){
 	    		infoWindow.open(map, marker);
