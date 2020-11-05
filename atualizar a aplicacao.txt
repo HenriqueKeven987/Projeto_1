@@ -1,0 +1,11 @@
+
+//para adionar ao .git repositorio local
+git add .
+
+//para dizer qual foi a alteracao feita
+git commit -m "alteracao" 
+
+//envio para o repositorio remoto github no caso
+git push
+
+
