@@ -131,8 +131,6 @@ section.banner-container{
 	width: 100%;
 	height: 600px;
 	position: relative;
-	background-size: cover;
-	background-image: url('../imagens/Coisado.jpg');
 }
 
 .banner-single{
@@ -140,9 +138,8 @@ section.banner-container{
 	left: 0;
 	top: 0;
 	z-index: 1;
-	width: 100%;
+	width:100%;
 	height:100%;
-	opacity: 0;
 	background-size: cover;
 	background-position: center;
 }
@@ -153,6 +150,7 @@ section.banner-container{
 	top: 0;
 	width: 100%;
 	height: 100%;
+	/*opacity defini nivel de transpaencia*/
 	z-index: 2;
 	background-color: rgba(51,51,51,0.7);
 }

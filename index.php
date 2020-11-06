@@ -95,7 +95,17 @@
 
 	<script src="<?php echo INCLUDE_PATH ?>js/coisa.js"></script>
 
-	<!--garregar o script do google-->
+	<!--garregar o script dos slider.js apenas na home-->
+	<?php
+		if ($url == 'home' or $url == '') {
+	?>
+	<script src="<?php echo INCLUDE_PATH ?>js/slider.js"></script>
+	<?php
+		}
+	?>
+
+
+	<!--garregar o script do google map apenas nos contatos-->
 	<?PHP
 
 		if($url == 'contato'){

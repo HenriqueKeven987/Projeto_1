@@ -63,7 +63,7 @@
 		if($('target').length > 0){
 
 			//attr esta selecionando o atributo target que esta na tag target
-			//nao esquce de declarar a id genio 
+			//nao esquece de declarar a id genio 
 			var elemento = '#'+$('target').attr('target');
 			//alert(elemento);
 			//offSet retornar as coordenadas do elemento
