@@ -1,6 +1,6 @@
 	
 	//funçao com $ chamada automaticamente quando pagina for carregada
-	//
+	//$ fazendo referencia a todo elemento
 	$(function(){
 		//aqui vai too nosso codigo de javascript
 
@@ -53,10 +53,26 @@
 				var icone = $('.botao-menu-mobile').find('i');
 				icone.removeClass('far fa-times-circle');
 				icone.addClass('fa-bars');
-				mobileMenu.slideToggle();	
+				mobileMenu.slideToggle();
 			}
 
 		})
+
+
+		//ajuste de scroll em sobre e servicos
+		if($('target').length > 0){
+
+			//attr esta selecionando o atributo target que esta na tag target
+			//nao esquce de declarar a id genio 
+			var elemento = '#'+$('target').attr('target');
+			//alert(elemento);
+			//offSet retornar as coordenadas do elemento
+			var divScroll = $(elemento).offset().top;
+			//animate vai alterar a altura de acordo com a coordenada passada pelo offSet
+			//assim fazendo com que a pagina dessa ao depoimento ou o servicos
+			$('html,body').animate({'scrollTop':divScroll})
+
+		}
 		
 		
 	})

@@ -59,7 +59,7 @@
 
 	 <section class="extras">
 	 	<div class="center">
-	 		<div class="w50 left depoimento-conteiner">
+	 		<div id="depoimentos" class="w50 left depoimento-conteiner">
 	 			<h2 class="title">Depoimentos dos nossos clientes</h2>
 	 			<div class="depoimento-single">
 	 				<p class="depoimento-descricao">"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."</p>
@@ -75,7 +75,7 @@
 	 			</div><!--depoimento-single-->
 	 	</div><!--w50-->
 
-	 	<div class="w50 left servicos-conteiner">
+	 	<div id="servicos" class="w50 left servicos-conteiner">
 	 			<h2 class="title">Serviços</h2>
 	 			<div class="servicos">
 		 			<ul>

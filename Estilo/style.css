@@ -8,6 +8,7 @@
 /**Boot CSS**/
 
 html,body{
+	/*overflow maa o efeito do jquery animate*/
 	height: 100%;
 }
 
