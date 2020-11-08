@@ -105,7 +105,7 @@
 	?>
 
 
-	<!--garregar o script do google map apenas nos contatos-->
+	<!--garregar o script do google map apenas na page dos contatos-->
 	<?PHP
 
 		if($url == 'contato'){
