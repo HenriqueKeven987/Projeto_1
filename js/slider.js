@@ -44,13 +44,10 @@ $(function(){
 				curSlider = 0;
 				//fadeIn(); almenta a transparencia pode receber ate tempo 
 				$('.banner-single').eq(curSlider).fadeIn();
-<<<<<<< HEAD
 
-=======
 				//trocar bullets da navegacao do slider
 				$('.bullets span').removeClass('active-slider');
 				$('.bullets span').eq(curSlider).addClass('active-slider');
->>>>>>> 94fa9ce2166a84cb8b5f8c1a5f474a3f78cd253a
 		},delay * 1000);
 
 	}

@@ -1,8 +1,7 @@
-$(function(){
 
-	var map;
-	
-	function initialize() {
+var map;
+
+function initialize() {
 
 	  var mapProp = {
 	    center:new google.maps.LatLng(-3.772760,-38.619230),
@@ -73,6 +72,8 @@ $(function(){
 	    		infoWindow.open(map, marker);
 	    	}
 	}
+
+$(function(){
 
 	setTimeout(function(){
 		initialize();

@@ -15,6 +15,7 @@
 	<meta charset="utf-8"/>
 </head>
 <body>
+	<base base="<?php echo INCLUDE_PATH; ?>"/>
 
 	<?php 
 
@@ -41,7 +42,7 @@
 					<li><a href="<?php echo INCLUDE_PATH ?>home">Home</a></li>
 					<li><a href="<?php echo INCLUDE_PATH ?>depoimentos">Depoimentos</a></li>
 					<li><a href="<?php echo INCLUDE_PATH ?>servicos">Serviços</a></li>
-					<li><a href="<?php echo INCLUDE_PATH ?>contato">Contato</a></li>
+					<li><a realtime="contato" href="<?php echo INCLUDE_PATH ?>contato">Contato</a></li>
 				</ul>
 			</nav>
 			<nav class="mobile right">
@@ -52,34 +53,39 @@
 					<li><a href="<?php echo INCLUDE_PATH ?>home">Home</a></li>
 					<li><a href="<?php echo INCLUDE_PATH ?>depoimentos">Depoimentos</a></li>
 					<li><a href="<?php echo INCLUDE_PATH ?>servicos">Serviços</a></li>
-					<li><a href="<?php echo INCLUDE_PATH ?>contato">Contato</a></li>
+					<li><a realtime="contato" href="<?php echo INCLUDE_PATH ?>contato">Contato</a></li>
 				</ul>
 			</nav>
 	<div class="clear"></div><!--clear-->		
 	</div><!--center-->
 	</header>
 
-	<?php 
 
-		//verificaçao para direcionamento da pagina
-		//a variavel url vai ver se existe uma url valida se tiver ela recebe se nao vai receber a home
-		$url = isset($_GET['url']) ? $_GET['url'] : 'home' ;
+	<div class="container-principal">
 
-		if (file_exists('pages/'.$url.'.php')) {
-			include('pages/'.$url.'.php');
-		}else{
-			//se nao achar o arquivo de pagina acima
+		<?php 
 
-			if ($url != 'depoimentos' && $url != 'servicos') { 
-				$pagina404 = true;
-				include('pages/404.php');
+			//verificaçao para direcionamento da pagina
+			//a variavel url vai ver se existe uma url valida se tiver ela recebe se nao vai receber a home
+			//$url = isset($_GET['url']) ? $_GET['url'] : 'home' ;
 
+			if (file_exists('pages/'.$url.'.php')) {
+				include('pages/'.$url.'.php');
 			}else{
-				include('pages/home.php');
-			}	
-		}
+				//se nao achar o arquivo de pagina acima
 
-	?>
+				if ($url != 'depoimentos' && $url != 'servicos') { 
+					$pagina404 = true;
+					include('pages/404.php');
+
+				}else{
+					include('pages/home.php');
+				}	
+			}
+
+		?>
+
+	</div><!--container-principal-->
 	
 
 	 <footer <?php if(isset($pagina404) && $pagina404 == true) echo 'class="fixed"'; ?>>
@@ -94,11 +100,17 @@
 
 	<script src="<?php echo INCLUDE_PATH ?>js/coisa.js"></script>
 
+	<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyDHPNQxozOzQSZ-djvWGOBUsHkBUoT_qH4"></script>
+
+	<script src="<?php echo INCLUDE_PATH; ?>js/map.js"></script>
+
 	<!--garregar o script dos slider.js apenas na home-->
 	<?php
 		if ($url == 'home' or $url == '') {
 	?>
+
 	<script src="<?php echo INCLUDE_PATH ?>js/slider.js"></script>
+
 	<?php
 		}
 	?>
@@ -111,9 +123,6 @@
 
 	?>
 
-	<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyDHPNQxozOzQSZ-djvWGOBUsHkBUoT_qH4"></script>
-
-	<script src="<?php echo INCLUDE_PATH; ?>js/map.js"></script>
 
 
 	<?php
