@@ -82,10 +82,15 @@
 
 				var pagina = $(this).attr('realtime');
 
-				$('.container-principal').load(INCLUDE_PATH+'pages/'+pagina+'.php');
+				$('.container-principal').hide();
+				$('.container-principal').load(include_path+'pages/'+pagina+'.php');
 
-				initialize();
-				addMarker(-3.772760,-38.619230,'',"Minha casa",undefined,false);
+				setTimeout(function(){
+					initialize();
+					addMarker(-3.772760,-38.619230,'',"Minha casa",undefined,false);
+				})
+
+				$('.container-principal').fadeIn(1000);
 
 				return false;
 

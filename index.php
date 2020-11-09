@@ -25,7 +25,6 @@
 			case 'depoimentos':
 					//target indica abrir documento vinculado
 					echo '<target target="depoimentos"/>  ';
-
 			break;
 			
 			case 'servicos':
@@ -53,7 +52,10 @@
 					<li><a href="<?php echo INCLUDE_PATH ?>home">Home</a></li>
 					<li><a href="<?php echo INCLUDE_PATH ?>depoimentos">Depoimentos</a></li>
 					<li><a href="<?php echo INCLUDE_PATH ?>servicos">Serviços</a></li>
-					<li><a realtime="contato" href="<?php echo INCLUDE_PATH ?>contato">Contato</a></li>
+					<li><a realtime href="<?php echo INCLUDE_PATH ?>contato">Contato
+					</a></li>
+					<li><a realtime href="<?php echo INCLUDE_PATH ?>outro menu">Outro Menu
+					</a></li>
 				</ul>
 			</nav>
 	<div class="clear"></div><!--clear-->		
