@@ -1,6 +1,7 @@
  
 	<!---banner inicial-->
 	<section class="banner-container">
+
 		<div style="background-image: url('<?php echo INCLUDE_PATH ?>imagens/watch.dogs.jpg');" class="banner-single"></div><!--banner single-->
 
 		<div style="background-image: url('<?php echo INCLUDE_PATH ?>imagens/watch.dogs(1).jpg');" class="banner-single"></div><!--banner single-->
@@ -10,6 +11,7 @@
 
 
 		<div class="overlay"></div><!--overlay-->
+
 		<div class="center">
 		<form>
 			<h2>Qual o Seu Melhor e-mail?</h2>
@@ -17,6 +19,17 @@
 			<input type="submit" name="acao" value="Cadastrar!"/>
 		</form>
 		</div><!--center-->
+
+		<div class="bullets">
+
+			<!--Span usado para colorir uma parte de um texto
+			<span class="active-slider"></span>
+			<span></span>
+			<span></span>
+			-->
+
+		</div><!--bullets-->
+
 	</section><!--banner-container-->
 
 	<!--Descriçao inicio-->
