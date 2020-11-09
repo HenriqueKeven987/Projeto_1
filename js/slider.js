@@ -24,12 +24,12 @@ $(function(){
 		setInterval(function(){
 
 			//fadeOut(); diminui a transparencia pode receber ate tempo
-			$('.banner-single').eq(curSlider).fadeOut(2000);
+			$('.banner-single').eq(curSlider).fadeOut();
 			curSlider++;
 			if (curSlider > maxSlider)
 				curSlider = 0;
 				//fadeIn(); almenta a transparencia pode receber ate tempo 
-				$('.banner-single').eq(curSlider).fadeIn(2000);
+				$('.banner-single').eq(curSlider).fadeIn();
 
 		},delay * 1000);
 
