@@ -36,6 +36,9 @@
 			break;
 		}
 	?>
+
+	<?php new Email(); ?>
+
 	<header>
 		<div class="center">
 			<div class="logo left"><a href="/">CRASH</a></div><!--logo-->
@@ -127,12 +130,10 @@
 	<?PHP
 
 		if($url == 'contato'){
-
 	?>
 
 	<?php
 		}
-		//final do script do google
 	?>
 
 	<script src="<?php echo INCLUDE_PATH; ?>js/exemplo.js"></script>
