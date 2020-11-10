@@ -5,16 +5,19 @@
 <html>
 <head>
 	<title>Projeto 01</title>
-	<link href="<?php echo INCLUDE_PATH ?>Estilo/css/all.css" rel="stylesheet"/>
+	<link href="<?php echo INCLUDE_PATH; ?>Estilo/css/all.css" rel="stylesheet"/>
 	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:300,400,700" rel="stylesheet"/>
-	<link rel="stylesheet" type="text/css" href="<?php echo INCLUDE_PATH ?>Estilo/style.css"/>
+	<link rel="stylesheet" type="text/css" href="<?php echo INCLUDE_PATH;?>Estilo/style.css"/>
 	<!--Desing respondsivel -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 	<meta name="description" content="Descrição do meu website"/>
 	<meta name="keywords" content="palavras-chaves,do,meu,site"/>
 	<meta charset="utf-8"/>
+	<link rel="icon" href="<?php echo INCLUDE_PATH; ?>Korone_Boobs.ico" type="image/x-icon"/>
+	
 </head>
 <body>
+
 	<base base="<?php echo INCLUDE_PATH; ?>"/>
 
 	<?php 
@@ -38,10 +41,12 @@
 			<div class="logo left"><a href="/">CRASH</a></div><!--logo-->
 			<nav class="desktop right">
 				<ul>
-					<li><a href="<?php echo INCLUDE_PATH ?>home">Home</a></li>
-					<li><a href="<?php echo INCLUDE_PATH ?>depoimentos">Depoimentos</a></li>
-					<li><a href="<?php echo INCLUDE_PATH ?>servicos">Serviços</a></li>
-					<li><a realtime="contato" href="<?php echo INCLUDE_PATH ?>contato">Contato</a></li>
+					<li><a href="<?php echo INCLUDE_PATH; ?>home">Home</a></li>
+					<li><a href="<?php echo INCLUDE_PATH; ?>depoimentos">Depoimentos</a></li>
+					<li><a href="<?php echo INCLUDE_PATH; ?>servicos">Serviços</a></li>
+					<li><a realtime="contato" href="<?php echo INCLUDE_PATH; ?>contato">Contato</a></li>
+					<li><a realtime="outro-menu" href="<?php echo INCLUDE_PATH; ?>outro-menu">Outro Menu
+					</a></li>
 				</ul>
 			</nav>
 			<nav class="mobile right">
@@ -49,12 +54,12 @@
 					<i class="fas fa-bars"></i>
 				</div>
 				<ul>
-					<li><a href="<?php echo INCLUDE_PATH ?>home">Home</a></li>
-					<li><a href="<?php echo INCLUDE_PATH ?>depoimentos">Depoimentos</a></li>
-					<li><a href="<?php echo INCLUDE_PATH ?>servicos">Serviços</a></li>
-					<li><a realtime href="<?php echo INCLUDE_PATH ?>contato">Contato
+					<li><a href="<?php echo INCLUDE_PATH; ?>home">Home</a></li>
+					<li><a href="<?php echo INCLUDE_PATH; ?>depoimentos">Depoimentos</a></li>
+					<li><a href="<?php echo INCLUDE_PATH; ?>servicos">Serviços</a></li>
+					<li><a realtime="contato" href="<?php echo INCLUDE_PATH; ?>contato">Contato
 					</a></li>
-					<li><a realtime href="<?php echo INCLUDE_PATH ?>outro menu">Outro Menu
+					<li><a realtime="outro-menu" href="<?php echo INCLUDE_PATH; ?>outro-menu">Outro Menu
 					</a></li>
 				</ul>
 			</nav>
@@ -98,9 +103,9 @@
 	 </footer>
 
 	<!--integraçao arquivo JS-->
-	<script src="<?php echo INCLUDE_PATH ?>js/jquery.js"></script>
+	<script src="<?php echo INCLUDE_PATH; ?>js/jquery.js"></script>
 
-	<script src="<?php echo INCLUDE_PATH ?>js/coisa.js"></script>
+	<script src="<?php echo INCLUDE_PATH; ?>js/coisa.js"></script>
 
 	<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyDHPNQxozOzQSZ-djvWGOBUsHkBUoT_qH4"></script>
 
@@ -111,7 +116,7 @@
 		if ($url == 'home' or $url == '') {
 	?>
 
-	<script src="<?php echo INCLUDE_PATH ?>js/slider.js"></script>
+	<script src="<?php echo INCLUDE_PATH; ?>js/slider.js"></script>
 
 	<?php
 		}
@@ -125,12 +130,12 @@
 
 	?>
 
-
-
 	<?php
 		}
 		//final do script do google
 	?>
+
+	<script src="<?php echo INCLUDE_PATH; ?>js/exemplo.js"></script>
 
 </body>
 

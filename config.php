@@ -1,6 +1,6 @@
 <?php 
 
-	define('INCLUDE_PATH', 'http://localhost/projeto_1/');
+	define('INCLUDE_PATH','http://localhost/projeto_1/');
 
 	
 ?>

@@ -88,7 +88,7 @@
 				setTimeout(function(){
 					initialize();
 					addMarker(-3.772760,-38.619230,'',"Minha casa",undefined,false);
-				})
+				},1000);
 
 				$('.container-principal').fadeIn(1000);
 
