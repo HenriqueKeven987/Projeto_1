@@ -13,9 +13,20 @@
 		<div class="overlay"></div><!--overlay-->
 
 		<div class="center">
-		<form>
+
+		<?php
+			if(isset($_POST['acao'])){
+				//Enviar o Formulario
+				if ($_POST['email'] != '') 
+					$email = $_POST['email'];
+				else
+					echo "<script>alert('Campos Vazios nao Sao Permitidos'); </script>";
+				
+			}
+		?>
+		<form method="post" >
 			<h2>Qual o Seu Melhor e-mail?</h2>
-			<input type="email" name="email" required/>
+			<input type="email" name="email" />
 			<input type="submit" name="acao" value="Cadastrar!"/>
 		</form>
 		</div><!--center-->

@@ -129,7 +129,7 @@ nav.desktop a:hover{
 
 section.banner-container{
 	width: 100%;
-	height: 600px;
+	height: 800px;
 	position: relative;
 }
 
@@ -173,7 +173,7 @@ section.banner-container form h2{
 	text-align: center;
 }
 
-section.banner-container form input[type=email]{
+section.banner-container form input[name=email]{
 	width: 100%;
 	height: 66px;
 	margin-top:10px;

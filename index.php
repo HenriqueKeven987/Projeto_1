@@ -13,12 +13,12 @@
 	<meta name="description" content="Descrição do meu website"/>
 	<meta name="keywords" content="palavras-chaves,do,meu,site"/>
 	<meta charset="utf-8"/>
-	<link rel="icon" href="<?php echo INCLUDE_PATH; ?>Korone_Boobs.ico" type="image/x-icon"/>
-	
+	<link rel="icon" href= "<?php echo INCLUDE_PATH; ?>Korone_Boobs.ico" type="image/x-icon"/>
+	<base base="<?php echo INCLUDE_PATH; ?>"/>
 </head>
 <body>
 
-	<base base="<?php echo INCLUDE_PATH; ?>"/>
+	<base base="<?php echo INCLUDE_PATH; ?>" />
 
 	<?php 
 
@@ -37,7 +37,7 @@
 		}
 	?>
 
-	<?php new Email(); ?>
+	<!--<?php //new Email(); ?>-->
 
 	<header>
 		<div class="center">
@@ -47,9 +47,7 @@
 					<li><a href="<?php echo INCLUDE_PATH; ?>home">Home</a></li>
 					<li><a href="<?php echo INCLUDE_PATH; ?>depoimentos">Depoimentos</a></li>
 					<li><a href="<?php echo INCLUDE_PATH; ?>servicos">Serviços</a></li>
-					<li><a realtime="contato" href="<?php echo INCLUDE_PATH; ?>contato">Contato</a></li>
-					<li><a realtime="outro-menu" href="<?php echo INCLUDE_PATH; ?>outro-menu">Outro Menu
-					</a></li>
+					<li><a realtime="contato" href="<?php echo INCLUDE_PATH;?>contato">Contato</a></li>
 				</ul>
 			</nav>
 			<nav class="mobile right">
@@ -60,9 +58,7 @@
 					<li><a href="<?php echo INCLUDE_PATH; ?>home">Home</a></li>
 					<li><a href="<?php echo INCLUDE_PATH; ?>depoimentos">Depoimentos</a></li>
 					<li><a href="<?php echo INCLUDE_PATH; ?>servicos">Serviços</a></li>
-					<li><a realtime="contato" href="<?php echo INCLUDE_PATH; ?>contato">Contato
-					</a></li>
-					<li><a realtime="outro-menu" href="<?php echo INCLUDE_PATH; ?>outro-menu">Outro Menu
+					<li><a realtime="contato" href="<?php echo INCLUDE_PATH;?>contato">Contato
 					</a></li>
 				</ul>
 			</nav>
@@ -111,6 +107,8 @@
 	<script src="<?php echo INCLUDE_PATH; ?>js/coisa.js"></script>
 
 	<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyDHPNQxozOzQSZ-djvWGOBUsHkBUoT_qH4"></script>
+
+	<script src="<?php echo INCLUDE_PATH; ?>js/constants.js"></script>
 
 	<script src="<?php echo INCLUDE_PATH; ?>js/map.js"></script>
 

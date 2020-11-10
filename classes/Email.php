@@ -6,6 +6,16 @@
 		//__construct sempre vai ser chamada ao chamar a classe	
 		function __construct()
 		{
+
+			// Import PHPMailer classes into the global namespace
+			// These must be at the top of your script, not inside a function
+
+			//use PHPMailer\PHPMailer\PHPMailer;
+			//use PHPMailer\PHPMailer\SMTP;
+			//use PHPMailer\PHPMailer\Exception;
+
+			// Load Composer's autoloader
+			//require 'vendor/autoload.php';
 			
 			$mail = new PHPMailer;
 
