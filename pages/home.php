@@ -16,7 +16,7 @@
 
 		<?php
 
-			if(isset($_POST['acao'])){
+			if(isset($_POST['acao']) && $_POST['identificador'] == 'form_home'){
 				//Enviar o Formulario
 
 				if ($_POST['email'] != ''){ 
@@ -26,11 +26,11 @@
 					if (filter_var($email, FILTER_VALIDATE_EMAIL)){ 
 						//tudo certo E um Email
 						//parametros passados para o construct
-						$classMail = new Email('seduc.ce.gov.br','henrique.keven@seduc.ce.gov.br','KLJcrash987','henrique');
+						$classMail = new Email('vps.dankicode.com','testes@dankicode.com','gui123456','Guilherme');
+						$classMail->addAdress('contato@dankicode.com','Guilherme');
+						$classMail->addAdress('kljcrash987@gmail.com','Henrique');
 
-						$classMail->addAdress('crash','kljcrash987@gmail.com');
-						 
-						$corpo = "Email cadastrado no home do site:<hr>".$email;
+						$corpo = "E-mail cadastrado no home do site:<hr>".$email;
 
 						$info = array('assunto'=>'cobra kai','corpo'=>$corpo);
 						//$info = ['assunto'=>'cobra kai','corpo'=>$email];
@@ -47,19 +47,60 @@
 					}else{
 						echo "<script>alert('Por Favor coloque um email valido') </script>";
 					}
+				
 				}
 				else{
 					echo "<script>alert('Campos Vazios nao Sao Permitidos'); </script>";
 				}
-				
+
 			}
+
+			else if(isset($_POST['acao']) && $_POST['identificador'] == 'form_contato'){
+
+				/*$nome = $_POST['nome'];
+				$email = $_POST['email'];
+				$telefone = $_POST['telefone'];
+				$msn = $_POST['mensagem'];*/
+
+				$assunto = 'nova mensagem do site';
+				$corpo = '';
+
+
+				foreach ($_POST as $key => $value) {
+							//ucfirst faz com q a primeira letra do php fique maiuscula
+					$corpo.=ucfirst($key).': '.$value;
+					$corpo.="<br/>";
+
+				}
+
+				$info = ['assunto: '=>$assunto,'corpo'=>$corpo];
+
+				$classMail = new Email('vps.dankicode.com','testes@dankicode.com','gui123456','Guilherme');
+				$classMail->addAdress('contato@dankicode.com','Guilherme');
+				$classMail->addAdress('kljcrash987@gmai.com','Henrique');
+
+				$classMail->formatarEmail($info);
+
+				if ($classMail->enviarEmail()){
+					echo "<script>alert('enviado com sucesso!')</script>";
+				}
+				else{
+					echo "<script>alert('vixi encheu dagua!')</script>";	
+				}
+
+			}	
+			
+			
+
 		?>
 
 		<form method="post">
 
 			<h2>Qual o Seu Melhor e-mail?</h2>
 
-			<input type="email" name="email" required />
+			<input type="email" name="email" required/>
+			<!--input hidden esta validando graças ao value que ele guarda-->
+			<input type="hidden" name="identificador" value="form_home"/>
 			<input type="submit" name="acao" value="Cadastrar!"/>
 
 		</form>

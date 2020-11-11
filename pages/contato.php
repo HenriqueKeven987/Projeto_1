@@ -16,6 +16,8 @@
 			<div></div>
 			<textarea placeholder="Sua Mensagem..." name="mensagem"></textarea>
 			<div></div>
+			<!--input hidden validando contatos != home(fomrulario)-->
+			<input type="hidden" name="identificador" value="form_contato">
 			<input type="submit" name="acao" value="Enviar!">
 
 		</form>		

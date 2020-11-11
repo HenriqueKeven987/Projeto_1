@@ -18,9 +18,11 @@
 			    $this->mailer->Host       = $host;                   
 			    $this->mailer->SMTPAuth   = true;                            
 			    $this->mailer->Username   = $username;                     
-			    $this->mailer->Password   = $senha;                               
+			    $this->mailer->Password   = $senha;
+			    //assm vc pergunta isso la no posto ipirangua
+			    //porta do servidor e protocolo de segurança                               
 			    $this->mailer->SMTPSecure = 'ssl';         
-			    $this->mailer->Port       = 465;                                    
+			    $this->mailer->Port       = 465;
 
 			    //metodo de envio 
 			    $this->mailer->setFrom($username,$name);
@@ -34,9 +36,9 @@
 		}
 
 
-		public function addAdress($nome,$email){
+		public function addAdress($email,$nome){
 
-			$this->mailer->addAddress($nome,$email);
+			$this->mailer->addAddress($email,$nome);
 
 		}//addAdress
 
