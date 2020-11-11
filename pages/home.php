@@ -15,27 +15,51 @@
 		<div class="center">
 
 		<?php
+
 			if(isset($_POST['acao'])){
 				//Enviar o Formulario
-				if ($_POST['email'] != '') 
+
+				if ($_POST['email'] != ''){ 
 					$email = $_POST['email'];
 					//Validar Email
-					if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
+
+					if (filter_var($email, FILTER_VALIDATE_EMAIL)){ 
 						//tudo certo E um Email
+						//parametros passados para o construct
+						$classMail = new Email('seduc.ce.gov.br','henrique.keven@seduc.ce.gov.br','KLJcrash987','henrique');
+
+						$classMail->addAdress('crash','kljcrash987@gmail.com');
+						 
+						$corpo = "Email cadastrado no home do site:<hr>".$email;
+
+						$info = array('assunto'=>'cobra kai','corpo'=>$corpo);
+						//$info = ['assunto'=>'cobra kai','corpo'=>$email];
+
+						$classMail->formatarEmail($info);
+
+						if ($classMail->enviarEmail()){
+							echo "<script>alert('enviado com sucesso!')</script>";
+						}
+						else{
+							echo "<script>alert('vixi encheu dagua!')</script>";	
+						}
+						
 					}else{
 						echo "<script>alert('Por Favor coloque um email valido') </script>";
 					}
+				}
 				else{
 					echo "<script>alert('Campos Vazios nao Sao Permitidos'); </script>";
 				}
 				
 			}
 		?>
-		<form method="post" >
+
+		<form method="post">
 
 			<h2>Qual o Seu Melhor e-mail?</h2>
 
-			<input type="email" name="email" />
+			<input type="email" name="email" required />
 			<input type="submit" name="acao" value="Cadastrar!"/>
 
 		</form>

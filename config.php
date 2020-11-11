@@ -3,7 +3,8 @@
 	$autoload = function($class){
 		
 		if($class == 'Email'){
-			include ('classes/phpmailer/PHPMailerAutoload.php');
+			//incluir arquivo so que nao vai incluir mais de 1 vez
+			require_once('classes/phpmailer/PHPMailerAutoload.php');
 		}
 
 		include('classes/'.$class.'.php');
@@ -13,5 +14,7 @@
 
 	define('INCLUDE_PATH','http://localhost/projeto_1/');
 
-	
+	//Hostgator KLJcrash!987
+
+
 ?>

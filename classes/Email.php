@@ -3,56 +3,63 @@
 	
 	class Email
 	{
+
+		private $mailer;
+
 		//__construct sempre vai ser chamada ao chamar a classe	
-		function __construct()
+		public function __construct($host,$username,$senha,$name)
 		{
-
-			// Import PHPMailer classes into the global namespace
-			// These must be at the top of your script, not inside a function
-
-			//use PHPMailer\PHPMailer\PHPMailer;
-			//use PHPMailer\PHPMailer\SMTP;
-			//use PHPMailer\PHPMailer\Exception;
-
-			// Load Composer's autoloader
-			//require 'vendor/autoload.php';
 			
-			$mail = new PHPMailer;
+			$this->mailer = new PHPMailer;
 
-			try {
+			{
 			    //Server settings
-			    $mail->isSMTP();                                            // Send using SMTP
-			    $mail->Host       = 'seduc.ce.gov.br';                    // Set the SMTP server to send through
-			    $mail->SMTPAuth   = true;                             // Enable SMTP authentication
-			    $mail->Username   = 'henrique.keven@seduc.ce.gov.br';                     // SMTP username
-			    $mail->Password   = 'KLJcrash987';                               // SMTP password
-			    $mail->SMTPSecure = 'http';         
-			    $mail->Port       = 465;                                    
+			    $this->mailer->isSMTP();                       
+			    $this->mailer->Host       = $host;                   
+			    $this->mailer->SMTPAuth   = true;                            
+			    $this->mailer->Username   = $username;                     
+			    $this->mailer->Password   = $senha;                               
+			    $this->mailer->SMTPSecure = 'ssl';         
+			    $this->mailer->Port       = 465;                                    
 
-			    //Recipients
-			    $mail->setFrom('kljcrash987@gmail.com', 'Gmail');
-			    $mail->addAddress('manriquekeven@hotmail.com', 'hotmail');     // Add a recipient;   
+			    //metodo de envio 
+			    $this->mailer->setFrom($username,$name);
+			    //permitir html no email enviado   
+			    $this->mailer->isHTML(true);
+			    //setando o cassete ou desculpa o charset utf 8 no email
+			    $this->mailer->CharSet = "UTF-8";
 
-			    // anexo de arquivos no email
-			    //$mail->addAttachment('/var/tmp/file.tar.gz');         // Add attachments
-			    //$mail->addAttachment('/tmp/image.jpg', 'new.jpg');    // Optional name
-
-			    //content
-			    // permicao de html no email 
-			    $mail->isHTML(true);                                  // Set email format to HTML
-			    $mail->Subject = 'Assunto do email';
-			    $mail->Body    = 'corpo do meu <b>email</b>';
-			    $mail->AltBody = 'corpo do meu email';
-
-			    $mail->send();
-			    echo 'Message has been sent';
-			}
-			//try vai tentar e catch se tentou e nao deu certo
-			catch (Exception $e) {
-			    echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
 			}
 
 		}
+
+
+		public function addAdress($nome,$email){
+
+			$this->mailer->addAddress($nome,$email);
+
+		}//addAdress
+
+		public function formatarEmail($info){
+                                  
+			$this->mailer->Subject = $info['assunto'];
+			$this->mailer->Body    = $info['corpo'];
+									//tirar o que tiver de codigo html strip_tags	
+			$this->mailer->AltBody = strip_tags($info['assunto']);
+
+		}//formatarEmail
+
+		public function enviarEmail(){
+
+			if ($this->mailer->send()){
+				return true;
+			}
+			else{
+				return false;
+			}
+		}//enviarMail
+
+
 	}
 
 ?>
