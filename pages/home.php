@@ -19,15 +19,25 @@
 				//Enviar o Formulario
 				if ($_POST['email'] != '') 
 					$email = $_POST['email'];
-				else
+					//Validar Email
+					if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
+						//tudo certo E um Email
+					}else{
+						echo "<script>alert('Por Favor coloque um email valido') </script>";
+					}
+				else{
 					echo "<script>alert('Campos Vazios nao Sao Permitidos'); </script>";
+				}
 				
 			}
 		?>
 		<form method="post" >
+
 			<h2>Qual o Seu Melhor e-mail?</h2>
+
 			<input type="email" name="email" />
 			<input type="submit" name="acao" value="Cadastrar!"/>
+
 		</form>
 		</div><!--center-->
 

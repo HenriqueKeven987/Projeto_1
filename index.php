@@ -44,7 +44,7 @@
 			<div class="logo left"><a href="/">CRASH</a></div><!--logo-->
 			<nav class="desktop right">
 				<ul>
-					<li><a href="<?php echo INCLUDE_PATH; ?>home">Home</a></li>
+					<li><a href="<?php echo INCLUDE_PATH; ?>">Home</a></li>
 					<li><a href="<?php echo INCLUDE_PATH; ?>depoimentos">Depoimentos</a></li>
 					<li><a href="<?php echo INCLUDE_PATH; ?>servicos">Serviços</a></li>
 					<li><a realtime="contato" href="<?php echo INCLUDE_PATH;?>contato">Contato</a></li>
@@ -55,7 +55,7 @@
 					<i class="fas fa-bars"></i>
 				</div>
 				<ul>
-					<li><a href="<?php echo INCLUDE_PATH; ?>home">Home</a></li>
+					<li><a href="<?php echo INCLUDE_PATH; ?>">Home</a></li>
 					<li><a href="<?php echo INCLUDE_PATH; ?>depoimentos">Depoimentos</a></li>
 					<li><a href="<?php echo INCLUDE_PATH; ?>servicos">Serviços</a></li>
 					<li><a realtime="contato" href="<?php echo INCLUDE_PATH;?>contato">Contato
