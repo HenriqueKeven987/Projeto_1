@@ -12,6 +12,7 @@
 
 	spl_autoload_register($autoload);
 
+								//quando for subir online ip da maquina no localhost
 	define('INCLUDE_PATH','http://localhost/projeto_1/');
 
 	//Hostgator KLJcrash!987
