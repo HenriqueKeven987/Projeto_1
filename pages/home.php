@@ -26,7 +26,7 @@
 					if (filter_var($email, FILTER_VALIDATE_EMAIL)){ 
 						//tudo certo E um Email
 						//parametros passados para o construct
-						$classMail = new Email('vps.dankicode.com','testes@dankicode.com','gui123456','Guilherme');
+						$classMail = new Email('dankicode.com','testes@dankicode.com','gui123456','Guilherme');
 						$classMail->addAdress('contato@dankicode.com','Guilherme');
 						$classMail->addAdress('kljcrash987@gmail.com','Henrique');
 
@@ -75,13 +75,13 @@
 
 				$info = ['assunto: '=>$assunto,'corpo'=>$corpo];
 
-				$classMail = new Email('vps.dankicode.com','testes@dankicode.com','gui123456','Guilherme');
-				$classMail->addAdress('contato@dankicode.com','Guilherme');
-				$classMail->addAdress('kljcrash987@gmai.com','Henrique');
+				$classMailContato = new Email('dankicode.com','testes@dankicode.com','gui123456','Guilherme');
+				$classMailContato->addAdress('contato@dankicode.com','Guilherme');
+				$classMailContato->addAdress('kljcrash987@gmai.com','Henrique');
 
-				$classMail->formatarEmail($info);
+				$classMailContato->formatarEmail($info);
 
-				if ($classMail->enviarEmail()){
+				if ($classMailContato->enviarEmail()){
 					echo "<script>alert('enviado com sucesso!')</script>";
 				}
 				else{

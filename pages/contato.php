@@ -5,7 +5,7 @@
 
 	<div class="center">
 	
-		<form>
+		<form method="post">
 				
 			<!--placeholder ... para ficar pre-preenchido como se fosse uma marca dagua-->	
 			<input type="text" name="nome" placeholder="Nome...">
