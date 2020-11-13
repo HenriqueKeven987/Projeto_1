@@ -1,6 +1,4 @@
 
-
-
 <section class="extras">
 	 	<div class="center">
 	 		<div id="depoimentos" class="w50 left depoimento-conteiner">
