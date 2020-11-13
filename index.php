@@ -37,7 +37,14 @@
 		}
 	?>
 
-	<!--<?php //new Email(); ?>-->
+	<div class="sucesso">Formulario enviado com sucesso!</div>
+
+	<div class="overlay-loading"><!--loading-simbol-->
+
+		<img src="<?php echo INCLUDE_PATH; ?>imagens/ajax-loader.gif">
+
+	</div><!--loading-simbol-->
+
 
 	<header>
 		<div class="center">
@@ -96,7 +103,7 @@
 
 	 <footer <?php if(isset($pagina404) && $pagina404 == true) echo 'class="fixed"'; ?>>
 	 	<div class="center">
-	 		<p>&copy; Cobra Kai Direitos Reservados</p>
+	 		<p>&copy;<?php echo date("Y");?> Cobra Kai Direitos Reservados</p>
 
 	 	</div>
 	 </footer>

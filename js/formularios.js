@@ -8,15 +8,25 @@ $(function(){
 
 		//ponte de js para linguagem de back-end caso PHP
 		$.ajax({
+			beforeSend:function(){
+				//quando tiver dominio 
+				//$('.overlay-loading').fadeIn();
+				console.log('enviando');
+			},
 			url:include_path+'ajax/formularios.php',
 			method:'post',
-			dataType: 'json',
+			dataType:'json',
 			data:form.serialize()
-
 		}).done(function(data){
 			if (data.sucesso) {
-				//vamos melhorar a interface
-				console.log("email enviado!");
+				//quando tiver dominio
+				//$('.overlay-loading').fadeOut();
+				console.log('enviado Aleluia');
+				$('.sucesso').fadeIn();
+				setTimeout(function(){
+					
+					$('.sucesso').fadeOut();
+				},3000)
 			}else{
 				console.log("ocorreu um erro ao enviar");
 			}	

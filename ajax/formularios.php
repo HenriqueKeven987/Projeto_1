@@ -14,16 +14,16 @@
 
 	foreach ($_POST as $key => $value) {
 							//ucfirst faz com q a primeira letra do php fique maiuscula
-		$corpo.=ucfirst($key).': '.$value;
+		$corpo.=ucfirst($key).": ".$value;
 		$corpo.="<br/>";
 
 	}
 
 	$info = ['assunto: '=>$assunto,'corpo'=>$corpo];
 
-	$classMailContato = new Email('dankicode.com','testes@dankicode.com','gui123456','Guilherme');
-	$classMailContato->addAdress('contato@dankicode.com','Guilherme');
-	$classMailContato->addAdress('kljcrash987@gmai.com','Henrique');
+	//$classMailContato = new Email('dankicode.com','testes@dankicode.com','gui123456','Guilherme');
+	$classMailContato = new Email('seduc.ce.gov.br', 'henrique.keven@seduc.ce.gov.br', 'KLJcrash987');
+	$classMailContato->addAdress('kljcrash987@gmail.com','Henrique');
 
 	$classMailContato->formatarEmail($info);
 
@@ -34,7 +34,7 @@
 		$data['erro'] = true;
 	}
 
-	$data['retorno'] = 'sucesso';
+	//$data['retorno'] = 'sucesso';
 
 	//json_encode trasnformando a array data do php em objeto do js
 	die(json_encode($data));
