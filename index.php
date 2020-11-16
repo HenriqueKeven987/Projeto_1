@@ -14,7 +14,6 @@
 	<meta name="keywords" content="palavras-chaves,do,meu,site"/>
 	<meta charset="utf-8"/>
 	<link rel="icon" href= "<?php echo INCLUDE_PATH; ?>Korone_Boobs.ico" type="image/x-icon"/>
-	<base base="<?php echo INCLUDE_PATH; ?>"/>
 </head>
 <body>
 

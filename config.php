@@ -1,5 +1,8 @@
 <?php 
 	
+	//iniciando ou coninuando uma session fica salva ate o usuario fechar o navegador
+	session_start();
+
 	$autoload = function($class){
 		
 		if($class == 'Email'){
@@ -14,8 +17,9 @@
 
 								//quando for subir online ip da maquina no localhost
 	define('INCLUDE_PATH','http://localhost/projeto_1/');
+	define('INCLUDE_PATH_PAINEL', INCLUDE_PATH.'painel/');
+
 
 	//Hostgator KLJcrash!987
-
 
 ?>

@@ -1,6 +1,6 @@
 
+//chamando funçao para toso o thml index.php
 $(function(){
-
 
 	//form de toda a pagina que passa pelo index
 	$('body').on('submit','form',function(){
