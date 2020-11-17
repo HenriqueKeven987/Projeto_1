@@ -22,6 +22,11 @@
 
 <header>
 	<div class="center">
+
+		<div class="menu-btn"><!--botao-->
+			<i class="fas fa-bars"></i>
+		</div><!--botao-->
+
 		<div class="loggout">
 			<a href="<?php echo INCLUDE_PATH_PAINEL;?>?loggout"><i class="fas fa-sign-out-alt"></i></a>
 		</div>
