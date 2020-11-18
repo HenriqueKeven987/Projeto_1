@@ -75,7 +75,8 @@ html,body{
 }
 
 header{
-	float: left;
+	left: 300px;
+	position: relative;
 	padding: 8px 0;
 	background: #00BFFF;
 
@@ -114,6 +115,9 @@ div.menu{
 	overflow-y: auto;
 	height: 100%;
 	padding: 10px;
+	position: fixed;
+	left: 0;
+	top: 0;
 	background: #008080;
 	float: left;
 	width: 300px;
@@ -150,4 +154,34 @@ div.menu{
 	color: white;
 	font-size: 17px;
 	margin:5px 0;
+}
+
+/*conteudo principal do painel*/
+
+
+.w100{
+	width: 100%;
+}
+
+.w50{
+	width: 50%;
+}
+
+.left{
+	float: left;
+}
+
+.content{
+	float: left;
+	width: calc(100% - 300px);
+	position: relative;
+	left: 300px;
+	padding: 10px;
+}
+
+.box-content{
+	width: 100%;
+	background: white;
+	padding: 10px;
+	margin-bottom: 10px;
 }

@@ -20,7 +20,7 @@
 
 	<div class="box-usuario">
 
-		<?php if($_SESSION['imagem'] == ''){ ?>
+		<?php if($_SESSION['img'] == ''){ ?>
 
 			<div class="avatar-usuario">
 				<i class="fa fa-user"></i>
@@ -57,6 +57,30 @@
 	<div class="clear"></div><!--clear-->
 
 </header>
+	
+<!--div conteudo principal-->
+<div class="content">
+	
+	<div class="box-content">
+		
+	</div><!--box-content-->
+
+	<div class="box-content">
+		
+	</div><!--box-content-->
+
+	<div class="box-content">
+		
+	</div><!--box-content-->
+
+	<div class="box-content">
+		
+	</div><!--box-content-->
+
+	<div class="clear"></div>
+
+</div>
+
 <div class="clear"></div>
 
 
