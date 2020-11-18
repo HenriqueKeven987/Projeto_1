@@ -24,8 +24,16 @@
 	define('DATABASE','projeto_1');
 	define('USER','root');
 	define('PASSWORD','');
-
-
 	//Hostgator KLJcrash!987
+
+	//funcoes
+	function pegaCargo($cargo){
+		//id de cada cargo
+		$arr = ['0' => 'normal','1' => 'sub admin','2' => 'administrador'];
+
+		return $arr[$cargo];
+
+	}
+
 
 ?>

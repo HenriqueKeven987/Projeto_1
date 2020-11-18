@@ -74,17 +74,9 @@ html,body{
 	margin: 0 auto;
 }
 
-div.menu{
-	overflow-y: auto;
-	height: 100%;
-	background: #008080;
-	float: left;
-	width: 300px;
-}
-
 header{
 	float: left;
-	padding: 10px 0;
+	padding: 8px 0;
 	background: #00BFFF;
 
 	/*calc soma dentro das propriedades*/
@@ -100,6 +92,13 @@ header{
 	color: white;
 	font-size: 20px;
 	padding: 0 5px;
+	margin-right: 10px;
+}
+
+.loggout a > span{
+	text-decoration: none;
+	font-size: 15px;
+
 }
 
 .menu-btn{
@@ -107,5 +106,48 @@ header{
 	cursor: pointer;
 	font-size: 25px;
 	color: white;
+	margin-left: 10px;
 	
+}
+
+div.menu{
+	overflow-y: auto;
+	height: 100%;
+	padding: 10px;
+	background: #008080;
+	float: left;
+	width: 300px;
+}
+
+.box-usuario{
+	text-align: center;
+}
+
+.avatar-usuario{
+	text-align: left;
+	width: 130px;
+	height: 130px;
+	border-radius: 50%;
+	border: 3px solid #2F3D42;
+	display: inline-block;
+
+}
+
+.avatar-usuario i{
+	position: relative;
+	transform: translate(-50%,-50%);
+	top: 50%;
+	left: 50%;
+	font-size: 50px;
+	color: #2F3D42;
+}
+
+.nome-usuario{
+	text-align: center;
+}
+
+.nome-usuario p{
+	color: white;
+	font-size: 17px;
+	margin:5px 0;
 }

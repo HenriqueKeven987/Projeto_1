@@ -22,9 +22,14 @@
 
 				if ($sql->rowCount() == 1) {
 					//logado com sucesso
+
+					$info = $sql->fetch();
 					$_SESSION['login'] = true;
 					$_SESSION['usuario'] = $usuario;
 					$_SESSION['senha'] = $senha;
+					$_SESSION['cargo'] = $info['cargo'];
+					$_SESSION['nome'] = $info['nome'];
+					$_SESSION['img'] = $info['img'];
 					//header direcionamento php
 					header('location: '.INCLUDE_PATH_PAINEL);
 					die();
