@@ -164,15 +164,19 @@ div.menu{
 }
 
 .w50{
-	width: 50%;
+	width: 48%;
+	
 }
 
 .left{
 	float: left;
 }
 
+.right{
+	float: right;
+}
+
 .content{
-	float: left;
 	width: calc(100% - 300px);
 	position: relative;
 	left: 300px;
@@ -180,8 +184,25 @@ div.menu{
 }
 
 .box-content{
-	width: 100%;
 	background: white;
 	padding: 10px;
 	margin-bottom: 10px;
+}
+
+@media screen and (max-width: 768px){
+
+	.menu{
+		display: none;
+	}
+
+	header{
+		width: 100%;
+		left: 0;
+	}
+
+	.content{
+		width: 100%;
+		left: 0;
+	}
+
 }

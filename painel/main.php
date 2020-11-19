@@ -2,7 +2,6 @@
 	if(isset($_GET['loggout'])){
 		Painel::loggout();
 }
-
 ?>
 <!DOCTYPE html>
 <html>
@@ -61,29 +60,37 @@
 <!--div conteudo principal-->
 <div class="content">
 	
-	<div class="box-content">
-		
+	<div class="w100 box-content left">
+			
+
+
 	</div><!--box-content-->
 
-	<div class="box-content">
+
+
+	<!--
+	<div class="w100 box-content left">
 		
-	</div><!--box-content-->
+	</div>
 
-	<div class="box-content">
+	<div class="w50 box-content left">
 		
-	</div><!--box-content-->
+	</div>
 
-	<div class="box-content">
+	<div class="w50 box-content right">
 		
-	</div><!--box-content-->
+	</div>
+	-->
 
-	<div class="clear"></div>
+	<div class="clear"></div><!--clear-->
 
-</div>
+</div><!--content-->
 
 <div class="clear"></div>
 
 
+<script src="<?php echo INCLUDE_PATH ?>js/jquery.js"></script >
+<script src="<?php echo INCLUDE_PATH_PAINEL ?>js/main.js"></script>
 
 
 </body>
