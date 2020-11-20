@@ -29,7 +29,8 @@ $(function(){
 				open = false;
 			});
 
-		}else{
+		}
+		else{
 			//o menu esta fechado
 			$('.menu').animate({'width':targetSizeMenu+'px', 'padding':'10px'},function(){
 				open = true;

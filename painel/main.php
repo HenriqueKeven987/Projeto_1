@@ -33,15 +33,35 @@
 
 		<?php }?>
 
+		<div class="nome-usuario">
+			<p><?php echo $_SESSION['nome']; ?></p>
+			<p><?php echo pegaCargo($_SESSION['cargo']); ?></p>
+		</div><!--nome-usuario-->
+
 	</div><!--box-usuario-->
+
+		<div class="items-menu">
+
+			<h2>Cadastro</h2>
+			<a href="">Cadastrar Depoimento</a>
+			<a href="">Cadastro Serviços</a>
+			<a href="">Cadastrar slides</a>
+
+			<h2>Gestao</h2>
+			<a href="">Listar Depoimento</a>
+			<a href="">Listar Serviços</a>
+			<a href="">Gerenciar Slides</a>
+
+			<h2>Administração do Painel</h2>
+			<a href="">Editar Usuario</a>
+			<a href="">Adicionar Usuario</a>
+
+			<h2>Configuraçao geral</h2>
+			<a href="">Editar</a>
+
+		</div><!--items--menu-->
 	</div><!--menu-whaper-->
-
-	<div class="nome-usuario">
-		<p><?php echo $_SESSION['nome']; ?></p>
-		<p><?php echo pegaCargo($_SESSION['cargo']); ?></p>
-	</div><!--nome-usuario-->
-
-</div>
+</div><!--menu-->
 
 <header>
 	<div class="center">
@@ -61,29 +81,35 @@
 <!--div conteudo principal-->
 <div class="content">
 	
-	<div class="w100 box-content left">
-			
-
-
-	</div><!--box-content-->
-
-
-
-	<!--
-	<div class="w100 box-content left">
+	<div class="box-content left w100">
 		
-	</div>
+		<div class="box-metricas">
 
-	<div class="w50 box-content left">
-		
-	</div>
+			<div class="box-metrica-single">
+				<div class="box-metrica-wraper">
+					<h2>Usuarios Online</h2>
+					<p>10</p>
+				</div><!--box-metrica-wraper-->
+			</div><!--box-metrica-single-->
 
-	<div class="w50 box-content right">
-		
-	</div>
-	-->
+			<div class="box-metrica-single">
+				<div class="box-metrica-wraper">
+					<h2>usuarios visitaram</h2>
+					<p>100</p>
+				</div><!--box-metrica-wraper-->
+			</div><!--box-metrica-single-->
 
-	<div class="clear"></div><!--clear-->
+			<div class="box-metrica-single">
+				<div class="box-metrica-wraper">
+					<h2>Visitaram Hoje</h2>
+					<p>3</p>
+				</div><!--box-metrica-wraper-->
+			</div><!--box-metrica-single-->
+
+			<div class="clear"></div>
+		</div><!--box-metricas-->
+
+	</div><!--box-content left w100-->
 
 </div><!--content-->
 

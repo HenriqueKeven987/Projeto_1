@@ -115,7 +115,7 @@ header{
 	
 }
 
-.menu-whaper{width: 300px;}
+.menu-whaper{width: 280px;}
 
 div.menu{
 	overflow-x: hidden;
@@ -163,6 +163,34 @@ div.menu{
 	margin:5px 0;
 }
 
+.items-menu{
+	margin-top: 30px;
+}
+
+.items-menu h2{
+	text-align: left;
+	font-weight: 300;
+	font-size: 20px;
+	color: white;
+	background: #FF8C00;
+	padding: 8px;
+	border-radius: 10px;
+	margin-top: 5px;
+}
+
+.items-menu a{
+	text-align: left;
+	font-size: 20px;
+	display: block;
+	color: white;
+	text-decoration: none;
+	background: #32CD32;
+	border-radius: 10px;
+	padding: 8px;
+	margin-top: 5px;
+}
+
+
 /*conteudo principal do painel*/
 
 
@@ -195,6 +223,7 @@ div.menu{
 	padding: 10px;
 	margin-bottom: 10px;
 }
+
 
 @media screen and (max-width: 768px){
 
