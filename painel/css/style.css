@@ -10,6 +10,10 @@ html,body{
 	background: #d3d3d3;
 }
 
+body{
+	overflow-x: hidden;
+}
+
 /*Pagina de login*/
 .box-login{
 	box-shadow: 5px 7px #888888;
@@ -111,7 +115,10 @@ header{
 	
 }
 
+.menu-whaper{width: 300px;}
+
 div.menu{
+	overflow-x: hidden;
 	overflow-y: auto;
 	height: 100%;
 	padding: 10px;
@@ -192,7 +199,7 @@ div.menu{
 @media screen and (max-width: 768px){
 
 	.menu{
-		display: none;
+
 	}
 
 	header{
@@ -205,4 +212,10 @@ div.menu{
 		left: 0;
 	}
 
+}
+
+@media screen and (max-width: 400px){
+	.menu-whaper{
+		width: 400px
+	}
 }

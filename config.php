@@ -1,6 +1,6 @@
 <?php 
 	
-	//iniciando ou coninuando uma session fica salva ate o usuario fechar o navegador
+	//iniciando ou continuando uma session fica salva ate o usuario fechar o navegador
 	session_start();
 	
 	$autoload = function($class){

@@ -16,7 +16,7 @@
 <body>
 
 <div class="menu">
-
+	<div class="menu-whaper">
 	<div class="box-usuario">
 
 		<?php if($_SESSION['img'] == ''){ ?>
@@ -34,6 +34,7 @@
 		<?php }?>
 
 	</div><!--box-usuario-->
+	</div><!--menu-whaper-->
 
 	<div class="nome-usuario">
 		<p><?php echo $_SESSION['nome']; ?></p>
