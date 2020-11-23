@@ -123,7 +123,7 @@ nav.desktop a{
 	text-decoration: none;
 }
 
-nav.desktop a:hover{
+nav.desktop a{
 	text-decoration: underline;
 }
 

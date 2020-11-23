@@ -121,7 +121,7 @@ div.menu{
 	overflow-x: hidden;
 	overflow-y: auto;
 	height: 100%;
-	padding: 10px;
+	padding: 10px ;
 	position: fixed;
 	left: 0;
 	top: 0;
@@ -152,6 +152,20 @@ div.menu{
 	font-size: 50px;
 	color: #2F3D42;
 }
+	
+.imagem-usuario{
+	display: inline-block;
+	height: 130px;
+	width: 130px; 	
+	position: relative;
+
+}
+
+.imagem-usuario img{
+	height: 130px;
+	width: 130px;
+	border-radius: 50%;
+}
 
 .nome-usuario{
 	text-align: center;
@@ -169,17 +183,17 @@ div.menu{
 
 .items-menu h2{
 	text-align: left;
-	font-weight: 300;
-	font-size: 20px;
-	color: white;
+	font-size: 20px;	
+	color: yellow;
 	background: #FF8C00;
 	padding: 8px;
 	border-radius: 10px;
-	margin-top: 5px;
+	margin-top: 15px;
 }
 
 .items-menu a{
 	text-align: left;
+	font-weight: 300;
 	font-size: 20px;
 	display: block;
 	color: white;
