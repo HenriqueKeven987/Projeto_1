@@ -6,7 +6,7 @@ $(function(){
 	//window puxando a key 0 funcoes nativas do js e innerWidth puxando a largura
 	var windowSize = $(window)[0].innerWidth;
 
-	var targetSizeMenu = (windowSize <= 400) ? 200 : 300;
+	var targetSizeMenu = (windowSize <= 400) ? 200 : 250;
 
 
 	if (windowSize <= 768) {
