@@ -46,7 +46,7 @@ $(function(){
 
 
 	//redimencionar em tempo real
-	$(window).resize(function(){
+	$(window).resize(function(){	
 
 		windowSize = $(window)[0].innerWidth;
 
