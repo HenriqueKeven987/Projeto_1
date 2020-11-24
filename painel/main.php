@@ -77,41 +77,12 @@
 	<div class="clear"></div><!--clear-->
 
 </header>
-	
-<!--div conteudo principal-->
-<div class="content">
-	
-	<div class="box-content left w100">
+
+<?php
 		
-		<div class="box-metricas">
+	Painel::carregarPagina();
 
-			<div class="box-metrica-single">
-				<div class="box-metrica-wraper">
-					<h2>Usuarios Online</h2>
-					<p>10</p>
-				</div><!--box-metrica-wraper-->
-			</div><!--box-metrica-single-->
-
-			<div class="box-metrica-single">
-				<div class="box-metrica-wraper">
-					<h2>usuarios visitaram</h2>
-					<p>100</p>
-				</div><!--box-metrica-wraper-->
-			</div><!--box-metrica-single-->
-
-			<div class="box-metrica-single">
-				<div class="box-metrica-wraper">
-					<h2>Visitaram Hoje</h2>
-					<p>3</p>
-				</div><!--box-metrica-wraper-->
-			</div><!--box-metrica-single-->
-
-			<div class="clear"></div>
-		</div><!--box-metricas-->
-
-	</div><!--box-content left w100-->
-
-</div><!--content-->
+?>
 
 <div class="clear"></div>
 

@@ -239,6 +239,51 @@ div.menu{
 }
 
 
+/*Box Metricas*/
+
+.box-metricas{
+	margin-top: 16px;
+	padding: 0 15px;
+}
+
+.box-metrica-single{
+	float: left;
+	position: relative;
+	width: 33.3%;
+	background: #F4B03E;
+	border: 5px solid white;
+}
+
+				/*esta se referindo ao (2) box-metrica-single*/
+.box-metricas .box-metrica-single:nth-of-type(2){
+	background: #E05C4E;
+}
+				/*esta se referindo ao (3) box-metrica-single*/
+.box-metricas .box-metrica-single:nth-of-type(3){
+	background: #0091ea;
+}
+
+.box-metricas h2{
+	font-size: 30px;
+}
+
+.box-metrica-wraper{
+	padding: 10px 20px;
+	text-align: left;
+	color: white;
+}
+
+.box-metrica-whaper h2{
+	font-size: 28px;
+}
+
+.box-metrica-whaper p{
+	padding: 10px 0;
+}
+
+
+
+/*Media Responsiva*/
 @media screen and (max-width: 768px){
 
 	.menu{

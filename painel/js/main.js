@@ -6,7 +6,7 @@ $(function(){
 	//window puxando a key 0 funcoes nativas do js e innerWidth puxando a largura
 	var windowSize = $(window)[0].innerWidth;
 
-	var targetSizeMenu = (windowSize <= 400) ? 200 : 250;
+	var targetSizeMenu = (windowSize <= 668) ? 250 : 300;
 
 
 	if (windowSize <= 768) {
@@ -63,8 +63,6 @@ $(function(){
 			$('.menu').css('width','250px').css('padding','10px');
 
 		}
-
-
 
 	})
 
