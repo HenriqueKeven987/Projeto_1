@@ -115,7 +115,7 @@ header{
 	
 }
 
-.menu-whaper{width: 280px;}
+.menu-whaper{width: 250px;}
 
 div.menu{
 	overflow-x: hidden;
@@ -255,10 +255,15 @@ div.menu{
 		left: 0;
 	}
 
+	.menu-whaper{
+		width: 200px;
+	}
+
+
 }
 
 @media screen and (max-width: 400px){
 	.menu-whaper{
-		width: 400px
+		width: 400px;
 	}
 }
