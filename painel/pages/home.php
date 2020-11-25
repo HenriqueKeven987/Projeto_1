@@ -1,4 +1,7 @@
 
+<?php
+	$usuariosOnline = Painel::listarUsuariosOnline();
+?>
 	
 	<div class="box-content w100">
 
@@ -9,7 +12,7 @@
 			<div class="box-metrica-single">
 				<div class="box-metrica-wraper">
 					<h2>Usuarios Online</h2>
-					<p>10</p>
+					<p><?php echo count($usuariosOnline); ?></p>
 				</div><!--box-metrica-wraper-->
 			</div><!--box-metrica-single-->
 

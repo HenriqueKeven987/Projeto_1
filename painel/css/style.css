@@ -291,11 +291,14 @@ div.menu{
 .table-responsive .row:nth-of-type(1){
 	font-weight: bold;
 	border-bottom: 1px solid #333;
+	background:#00CED1; 
+	color:white;
+	font-size: 20px;
 }
 
 .table-responsive .row{
 	color: #555;
-	padding: 8px 0;
+	padding: 8px 8px;
 }
 
 .col{
