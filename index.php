@@ -1,6 +1,5 @@
-<?php 
-	include('config.php'); 
-?>
+<?php include('config.php'); ?>
+<?php Site::updateUsuarioOnline();?>
 <!DOCTYPE html>
 <html>
 <head>

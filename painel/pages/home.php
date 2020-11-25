@@ -1,24 +1,10 @@
 
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Home</title>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-	<link href="<?php echo INCLUDE_PATH; ?>/Estilo/css/all.css" rel="stylesheet"/>
-	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:300,400,700" rel="stylesheet"/>
-	<link rel="stylesheet" type="text/css" href="<?php echo INCLUDE_PATH_PAINEL ?>css/style.css">
-</head>
-<body>
-
-<!--div conteudo principal-->
-<div class="content">
 	
-	<div class="box-content left w100">
+	<div class="box-content w100">
+
+		<h2 class="h2-contents">Ocelo:Sobe Nao?</h2>
 		
 		<div class="box-metricas">
-
-			<h2>Sobe Não?</h2>
 
 			<div class="box-metrica-single">
 				<div class="box-metrica-wraper">
@@ -44,9 +30,47 @@
 			<div class="clear"></div>
 		</div><!--box-metricas-->
 
-	</div><!--box-content left w100-->
+	</div><!--box-content w100-->
 
-</div><!--content-->
+	<div class="box-content w100">
+		<h2 class="h2-contents"><i class="fa fa-rocket"></i> Usuarios Online</h2>
+
+		<div class="table-responsive">
+
+			<div class="row">
+
+				<div class="col">
+					<span>IP</span>
+				</div><!--col-->
+
+				<div class="col">
+					<span>ultima acao</span>
+				</div><!--col-->
+
+				<div class="clear"></div>
+
+			</div><!--row-->
+
+			<!--repetindo a row-->
+			<?php for($i = 0;$i < 1;$i++){ ?>
+			<div class="row">
+
+				<div class="col">
+					<span>172.31.2.18</span>
+				</div><!--col-->
+
+				<div class="col">
+					<span>meu pau na tua mao</span>
+				</div><!--col-->
+
+				<div class="clear"></div>
+
+			</div><!--row-->
+		<?php } ?>
+
+		</div><!--table-responsive-->
+
+	</div><!--box-content-->
 
 
 </body>

@@ -2,6 +2,7 @@
 	
 	//iniciando ou continuando uma session fica salva ate o usuario fechar o navegador
 	session_start();
+	date_default_timezone_set('America/Sao_paulo');
 	
 	$autoload = function($class){
 		

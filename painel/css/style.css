@@ -235,9 +235,13 @@ div.menu{
 .box-content{
 	background: white;
 	padding: 10px;
-	margin-bottom: 10px;
+	margin-bottom: 25px;
 }
 
+.h2-contents{
+	text-align: center;
+	
+}
 
 /*Box Metricas*/
 
@@ -263,10 +267,6 @@ div.menu{
 	background: #0091ea;
 }
 
-.box-metricas h2{
-	font-size: 30px;
-}
-
 .box-metrica-wraper{
 	padding: 10px 20px;
 	text-align: left;
@@ -279,6 +279,28 @@ div.menu{
 
 .box-metrica-whaper p{
 	padding: 10px 0;
+}
+
+/*tabela responsiva*/
+
+.table-responsive{
+	margin: 20px auto;
+	max-width: 1280px;
+}
+
+.table-responsive .row:nth-of-type(1){
+	font-weight: bold;
+	border-bottom: 1px solid #333;
+}
+
+.table-responsive .row{
+	color: #555;
+	padding: 8px 0;
+}
+
+.col{
+	float: left;
+	width: 50%;
 }
 
 

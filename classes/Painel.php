@@ -19,7 +19,12 @@
 				$url = explode('/', $_GET['url']);
 				
 				if (file_exists('pages/'.$url[0].'.php')) {
-					
+
+					include('pages/'.$url[0].'.php');
+
+				}else{
+					//pagina nao existe
+					header('Location: '.INCLUDE_PATH_PAINEL);			
 				}
 
 			}else{

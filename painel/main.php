@@ -43,7 +43,7 @@
 		<div class="items-menu">
 
 			<h2>Cadastro</h2>
-			<a href="">Cadastrar Depoimento</a>
+			<a href="<?php echo INCLUDE_PATH_PAINEL?>cadastrar-depoimento">Cadastrar Depoimento</a>
 			<a href="">Cadastro Serviços</a>
 			<a href="">Cadastrar slides</a>
 
@@ -71,6 +71,7 @@
 		</div><!--menu-btn-->
 
 		<div class="loggout">
+			<a href="<?php echo INCLUDE_PATH_PAINEL;?>"><i class="fas fa-home"><span> Pagina Inicial</span></i></a>
 			<a href="<?php echo INCLUDE_PATH_PAINEL;?>?loggout"><i class="fas fa-sign-out-alt"><span> Sair</span></i></a>
 		</div>
 	</div>
@@ -78,11 +79,15 @@
 
 </header>
 
+<div class="content">
+
 <?php
 		
 	Painel::carregarPagina();
 
 ?>
+
+</div><!--content-->
 
 <div class="clear"></div>
 
