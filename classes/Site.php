@@ -25,8 +25,6 @@
 					$sql->execute(array($ip,$horarioAtual,$token));
 				}
 
-
-
 			}
 			 else{
 			 	//primeiro login no site

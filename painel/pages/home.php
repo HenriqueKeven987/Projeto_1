@@ -43,7 +43,7 @@
 			<div class="row">
 
 				<div class="col">
-					<span>IP</span>
+					<span>Ip</span>
 				</div><!--col-->
 
 				<div class="col">
@@ -55,15 +55,18 @@
 			</div><!--row-->
 
 			<!--repetindo a row-->
-			<?php for($i = 0;$i < 1;$i++){ ?>
+			<?php foreach ($usuariosOnline as $key => $value) {
+				
+			 ?>
 			<div class="row">
 
 				<div class="col">
-					<span>172.31.2.18</span>
+					<span><?php echo $value['ip']; ?></span>
 				</div><!--col-->
 
 				<div class="col">
-					<span>meu pau na tua mao</span>
+					<!--  date dps convertendo para o formato,strtotime converter em segundos-->
+					<span><?php echo date('d/m/Y H:i:s',strtotime($value['ultima_acao']));  ?></span>
 				</div><!--col-->
 
 				<div class="clear"></div>
