@@ -307,6 +307,14 @@ div.menu{
 }
 
 
+/*Pagina de editar usuario*/
+
+.form-group:nth-of-type(1){
+	width: 33.3%;
+	float: left;
+}
+
+
 
 /*Media Responsiva*/
 @media screen and (max-width: 768px){

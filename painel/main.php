@@ -53,7 +53,7 @@
 			<a href="">Gerenciar Slides</a>
 
 			<h2>Administração do Painel</h2>
-			<a href="">Editar Usuario</a>
+			<a href="<?php echo INCLUDE_PATH_PAINEL?>editar-usuario">Editar Usuario</a>
 			<a href="">Adicionar Usuario</a>
 
 			<h2>Configuraçao geral</h2>
@@ -67,7 +67,7 @@
 	<div class="center">
 
 		<div class="menu-btn">
-			<i class="fas fa-bars"></i> 
+			<i class="fas fa-bars"> Painel</i> 
 		</div><!--menu-btn-->
 
 		<div class="loggout">
