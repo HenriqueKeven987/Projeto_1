@@ -40,6 +40,24 @@
 
 		}
 
+		public static function contador(){
+			if (!isset($_COOKIE['visita'])) {
+
+				//$ip = $_SERVER['REMOTE_ADDR'];//pegando ip do usuario
+				//$horarioAtual = date('Y-m-d H:i:s');//´pegando hora do usuario
+
+				//setando cookie nome status e tempo (time buscar o tempo atual)
+				setcookie('visita',true,time()+ (60*60*24*7));
+				$sql = Mysql::conectar()->prepare("INSERT INTO `tb-admin.visitas` VALUES (null,?,?)");
+				$sql->execute(array($_SERVER['REMOTE_ADDR'],date('Y-m-d H:i:s')));
+
+			}
+
+			
+
+
+		}
+
 	}
 
 

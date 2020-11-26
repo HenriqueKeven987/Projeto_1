@@ -47,6 +47,19 @@
 			$sql = Mysql::conectar()->exec("DELETE FROM `tb-admin.online` WHERE ultima_acao < '$date' - INTERVAL 1 MINUTE");
 
 		}
+
+		public static function visitas(){
+			$pegarVisitas = Mysql::conectar()->prepare("SELECT * FROM `tb-admin.visitas`");
+			$pegarVisitas->execute();
+			return $pegarVisitas;
+		}
+
+		public static function visitasHoje(){
+			$pegarVisitasHj = Mysql::conectar()->prepare("SELECT * FROM `tb-admin.visitas` WHERE dia = ?");
+			$pegarVisitasHj->execute(array(date('Y-m-d')));
+			return $pegarVisitasHj;
+				
+		}
 		
 	}
 

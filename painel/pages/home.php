@@ -1,6 +1,11 @@
 
 <?php
 	$usuariosOnline = Painel::listarUsuariosOnline();
+
+	$usuariosVisitas = Painel::visitas();
+
+	$usuariosHoje = Painel::visitasHoje();
+
 ?>
 	
 	<div class="box-content w100">
@@ -18,15 +23,15 @@
 
 			<div class="box-metrica-single">
 				<div class="box-metrica-wraper">
-					<h2>usuarios visitaram</h2>
-					<p>100</p>
+					<h2>Total de visitas</h2>
+					<p><?php echo $usuariosVisitas->rowCount(); ?> </p>
 				</div><!--box-metrica-wraper-->
 			</div><!--box-metrica-single-->
 
 			<div class="box-metrica-single">
 				<div class="box-metrica-wraper">
-					<h2>Visitaram Hoje</h2>
-					<p>3</p>
+					<h2>Visitas hoje</h2>
+					<p><?php echo $usuariosHoje->rowCount(); ?></p>
 				</div><!--box-metrica-wraper-->
 			</div><!--box-metrica-single-->
 
@@ -72,6 +77,7 @@
 				<div class="clear"></div>
 
 			</div><!--row-->
+
 		<?php } ?>
 
 		</div><!--table-responsive-->
