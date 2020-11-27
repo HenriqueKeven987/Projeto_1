@@ -351,6 +351,25 @@ div.menu{
 
 .form-group{
 	margin: 10px 0;
+}
+
+/*box de alerta*/
+
+.box-alert{
+	width: 100%;
+	height: 40px;
+	text-align: center;
+	font-size: 30px;
+}
+
+.sucesso{
+	background: #00FA9A;
+	color: #00BFFF;
+}
+
+.erro{
+	background:#FFA500;
+	color: #FF6347;
 } 
 
 

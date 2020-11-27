@@ -60,6 +60,14 @@
 			return $pegarVisitasHj;
 				
 		}
+
+		public static function alertSuccess($tipo,$mensagem){
+			if ($tipo == 'sucesso') {
+				echo "<div class='box-alert sucesso'><i class='fas fa-check'></i> ".$mensagem."</div>";
+			}else if ($tipo == 'erro') {
+				echo "<div class='box-alert erro'><i class='fas fa-times'></i>".$mensagem."</div>";
+			}
+		}
 		
 	}
 
