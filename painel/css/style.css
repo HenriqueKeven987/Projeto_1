@@ -376,10 +376,6 @@ div.menu{
 /*Media Responsiva*/
 @media screen and (max-width: 768px){
 
-	.menu{
-
-	}
-
 	header{
 		width: 100%;
 		left: 0;

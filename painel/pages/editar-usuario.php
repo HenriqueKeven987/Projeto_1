@@ -7,11 +7,22 @@
 	<form method="post" enctype="multipart/form-data">
 
 		<?php
+
 			if (isset($_POST['acao'])) {
 				//enviou ataalizacao de usuario
-				Painel::alertSuccess('sucesso','Atualizado Com Sucesso!'); 
+				Painel::alertSuccess('sucesso','Atualizado Com Sucesso!');
+
+				$usuario = new Usuario;
+				$nome = $_POST['nome'];
+				$senha = $_POST['senha'];
+				//$_FILES faz upload de arquivos
+				$imagem = $_FILES['imagem'];
+				$imagem_atual = $_POST['imagem_atual'];
+
+				Usuario::atualizarUsuario($nome,$senha,$imagem);
 
 			}
+
 		?>
 		
 		<div class="form-group">
