@@ -20,8 +20,8 @@
 	define('INCLUDE_PATH','http://localhost/projeto_1/');
 	define('INCLUDE_PATH_PAINEL', INCLUDE_PATH.'painel/');
 
-	 
-	define('BASE_DIR_PAINEL', INCLUDE_PATH_PAINEL.'uploads/')
+
+	//define('BASE_DIR_PAINEL', INCLUDE_PATH_PAINEL.'uploads/'.);
 
 	//configuraçoes de acesso ao banco de dados
 	define('HOST','localhost');
