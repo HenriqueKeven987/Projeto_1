@@ -23,10 +23,10 @@
 					//existe o upload de imagem
 					if (Painel::imagemValida($imagem)) {
 						//imagem valida com sucesso						
-						$imagem = Painel::uploadImagem($imagem);
+						$imagem = Painel::uploadFile($imagem);
 
 						if($usuario->atualizarUsuario($nome,$senha,$imagem)){
-						Painel::alertSuccess('sucesso','Atualizado Com Sucesso!');
+							Painel::alertSuccess('sucesso','Atualizado Com Sucesso!');
 						}
 						else{
 							Painel::alertSuccess('erro','erro ao atualizar!');
