@@ -10,8 +10,8 @@
 
 			if (isset($_POST['acao'])) {
 				//enviou ataalizacao de usuario
-				Painel::alertSuccess('sucesso','Atualizado Com Sucesso!');
-
+				
+				//esta cendo estanciado pq a funcao nao esta estatica
 				$usuario = new Usuario;
 				$nome = $_POST['nome'];
 				$senha = $_POST['senha'];
@@ -19,7 +19,33 @@
 				$imagem = $_FILES['imagem'];
 				$imagem_atual = $_POST['imagem_atual'];
 
-				Usuario::atualizarUsuario($nome,$senha,$imagem);
+				if ($imagem['name'] != '') {
+					//existe o upload de imagem
+					if (Painel::imagemValida($imagem)) {
+						//imagem valida com sucesso						
+						$imagem = Painel::uploadImagem($imagem);
+
+						if($usuario->atualizarUsuario($nome,$senha,$imagem)){
+						Painel::alertSuccess('sucesso','Atualizado Com Sucesso!');
+						}
+						else{
+							Painel::alertSuccess('erro','erro ao atualizar!');
+						}						
+						
+					}
+
+				}else{
+					//nao existe upload de imagem
+					$imagem = $imagem_atual;
+					$usuario = new Usuario();
+
+					if($usuario->atualizarUsuario($nome,$senha,$imagem)){
+						Painel::alertSuccess('sucesso','Atualizado Com Sucesso!');
+					}else{
+						Painel::alertSuccess('erro','erro ao atualizar!');
+					}
+
+				}
 
 			}
 
