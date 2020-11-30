@@ -22,16 +22,20 @@
 				if ($imagem['name'] != '') {
 					//existe o upload de imagem
 					if (Painel::imagemValida($imagem)) {
-						//imagem valida com sucesso						
+						//imagem valida com sucesso
+						Painel::deleteFile($imagem_atual);						
 						$imagem = Painel::uploadFile($imagem);
 
 						if($usuario->atualizarUsuario($nome,$senha,$imagem)){
-							Painel::alertSuccess('sucesso','Atualizado Com Sucesso!');
+							$_SESSION['img'] = $imagem;
+							Painel::alertSuccess('sucesso','Atualizado Com Sucesso junto a imagem');
 						}
 						else{
 							Painel::alertSuccess('erro','erro ao atualizar!');
 						}						
 						
+					}else{
+						Painel::alertSuccess('erro','formato de imagem nao valido!');
 					}
 
 				}else{

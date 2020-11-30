@@ -99,6 +99,11 @@
 			else
 				return false;
 		}
+
+		public static function deleteFile($file){
+			//esse @ vai ocultar erros ao deletar o arquivo
+			@unlink(BASE_DIR_PAINEL.'/uploads/'.$file);
+		}
 		
 	}
 
