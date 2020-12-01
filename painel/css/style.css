@@ -372,6 +372,14 @@ div.menu{
 	color: #FF6347;
 } 
 
+a.menu-active{
+	background: #126626;
+}
+
+.menu-active::before{
+	content: '> ';
+}
+
 
 /*Media Responsiva*/
 @media screen and (max-width: 768px){
