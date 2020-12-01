@@ -71,7 +71,7 @@
 			var divScroll = $(elemento).offset().top;
 			//animate vai alterar a altura de acordo com a coordenada passada pelo offSet
 			//assim fazendo com que a pagina dessa ao depoimento ou o servicos
-			$('html,body').animate({'scrollTop':divScroll})
+			$('html,body').animate({'scrollTop':divScroll});
 
 		}
 

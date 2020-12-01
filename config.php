@@ -30,14 +30,26 @@
 	define('PASSWORD','');
 	//Hostgator KLJcrash!987
 
-	//funcoes
+	//funcoes do painel
 	function pegaCargo($cargo){
 		//id de cada cargo
 		$arr = ['0' => 'normal','1' => 'sub admin','2' => 'administrador'];
-
 		return $arr[$cargo];
 
 	}
+
+	function selecionadoMenu($selecionado){
+		/*<i class="fas fa-angle-double-right"></i>*/
+
+		//explode ('o que separa a string em array',o que vai ser separado);
+		$url = explode('/',@$_GET['url'])[0];
+		if ($url == $selecionado) {
+			echo 'class="menu-active"';
+		}
+
+	}
+
+
 
 
 ?>

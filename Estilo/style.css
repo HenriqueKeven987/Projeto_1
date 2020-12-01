@@ -87,6 +87,7 @@ img{
 header{
 	padding:20px 0;
 	background: #3D437A;
+	text-decoration: none;
 }
 
 header .logo{
@@ -123,9 +124,6 @@ nav.desktop a{
 	text-decoration: none;
 }
 
-nav.desktop a{
-	text-decoration: underline;
-}
 
 section.banner-container{
 	width: 100%;

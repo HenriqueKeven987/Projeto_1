@@ -76,7 +76,7 @@
 			if ($imagem['type'] == 'image/jpeg' or
 				$imagem['type'] == 'image/jpg' or
 				$imagem['type'] == 'image/png') 
-			{				
+			{				 
 							//intval valor fica inteiro
 				$tamanho = intval($imagem['size']/1024);
 				//DOUBLE = 12.5;
@@ -91,7 +91,7 @@
 			}
 		}
 
-
+		//upload de arquivos
 		public static function uploadFile($file){
 
 			if (move_uploaded_file($file['tmp_name'],BASE_DIR_PAINEL.'/uploads/'.$file['name'])) 
@@ -100,8 +100,10 @@
 				return false;
 		}
 
+		//deletando arquivos
 		public static function deleteFile($file){
 			//esse @ vai ocultar erros ao deletar o arquivo
+			//unlink deleta arquivos (diretorio,nome do arquivo)
 			@unlink(BASE_DIR_PAINEL.'/uploads/'.$file);
 		}
 		

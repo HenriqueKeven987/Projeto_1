@@ -2,11 +2,11 @@
 	<!---banner inicial-->
 	<section class="banner-container">
 
-		<div style="background-image: url('<?php echo INCLUDE_PATH ?>imagens/watch.dogs.jpg');" class="banner-single"></div><!--banner single-->
+		<div style="background-image: url('<?php echo INCLUDE_PATH;?>imagens/watch.dogs.jpg');" class="banner-single"></div><!--banner single-->
 
-		<div style="background-image: url('<?php echo INCLUDE_PATH ?>imagens/watch.dogs(1).jpg');" class="banner-single"></div><!--banner single-->
+		<div style="background-image: url('<?php echo INCLUDE_PATH;?>imagens/watch.dogs(1).jpg');" class="banner-single"></div><!--banner single-->
 
-		<div style="background-image: url('<?php echo INCLUDE_PATH ?>imagens/watch.dogs(2).jpg');" class="banner-single"></div><!--banner single-->
+		<div style="background-image: url('<?php echo INCLUDE_PATH?>imagens/watch.dogs(2).jpg');" class="banner-single"></div><!--banner single-->
 
 
 

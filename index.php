@@ -34,6 +34,7 @@
 					echo '<target target="servicos"/>  ';
 			break;
 		}
+
 	?>
 
 	<div class="sucesso">Formulario enviado com sucesso!</div>
@@ -118,27 +119,9 @@
 
 	<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyDHPNQxozOzQSZ-djvWGOBUsHkBUoT_qH4"></script>
 
-	<!--garregar o script dos slider.js apenas na home-->
-	<?php
-		if ($url == 'home' or $url == '') {
-	?>
-
 	<script src="<?php echo INCLUDE_PATH; ?>js/slider.js"></script>
 
-	<?php
-		}
-	?>
-
-
 	<!--garregar o script do google map apenas na page dos contatos-->
-	<?PHP
-
-		if($url == 'contato'){
-	?>
-
-	<?php
-		}
-	?>
 
 	<script src="<?php echo INCLUDE_PATH; ?>js/formularios.js"></script>
 
