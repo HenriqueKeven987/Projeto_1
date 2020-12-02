@@ -19,7 +19,7 @@
 				$login = $_POST['login'];
 				$nome = $_POST['nome'];
 				$senha = $_POST['senha'];
-				$imagem = $_FILE['imagem'];
+				$imagem = $_FILES['imagem'];
 				$cargo = $_POST['cargo'];
 					
 				if ($login == '') {
@@ -38,9 +38,9 @@
 						//imagem valida
 							//falta fazer o upload da imagem
 							$imagem = Painel::uploadFile($imagem);
-
 							$usuario = new Usuario;
-						if ($usuario->adicionarUsuario($login,$nome,$senha,$cargo,$imagem)) {
+
+						if ($usuario->adicionarUsuario($login,$senha,$imagem,$nome,$cargo)) {
 							Painel::alertSuccess('sucesso','usuario cadstrado com sucesso!');
 						}else{
 
@@ -84,7 +84,7 @@
 
 		<div class="form-group">
 			<label>Cargo</label>
-			<select>
+			<select name="cargo">
 				<?php 
 					foreach (Painel::$cargos as $key => $value) {
 						if($key < $_SESSION['cargo']) 
