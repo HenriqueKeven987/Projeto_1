@@ -57,6 +57,15 @@
 		}
 	}
 
+	function verificaPermicaoPagina($permissao){
+		if ($_SESSION['cargo'] >= $permissao) {
+			return;
+		}else{
+			include('painel/pages/permicao_negada.php');
+			die();
+		}
+	}
+
 
 
 

@@ -1,4 +1,9 @@
 
+<?php
+	verificaPermicaoPagina(2);
+?>
+
+
 <div class="box-content">
 
 	<h2 class=""><i class="fas fa-user-edit"></i> Adicionar Usuario</h2>
@@ -8,12 +13,21 @@
 
 		<?php
 
-			if (isset($_POST['acao'])) {
+			if (isset($_POST['acao'])) { 
 				//enviou cadastro de usuario
+
+
 
 			}
 
 		?>
+
+		<div class="form-group">
+
+			<label>Login:</label>
+			<input type="text" name="login" required>
+
+		</div><!--form-group-->
 		
 		<div class="form-group">
 
@@ -32,7 +46,7 @@
 
 		<div class="form-group">
 
-			<label>imagem</label>
+			<label>Imagem</label>
 			<input type="file" name="imagem" required/>
 
 		</div><!--form-group-->

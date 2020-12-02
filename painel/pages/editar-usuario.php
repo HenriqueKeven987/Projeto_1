@@ -1,4 +1,8 @@
 
+<?php
+	verificaPermicaoPagina(2);
+?>
+
 <div class="box-content">
 
 	<h2 class=""><i class="fas fa-user-edit"></i> Editar Usuario</h2>
