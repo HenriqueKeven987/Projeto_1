@@ -1,5 +1,11 @@
 <?php 
 	
+	/*
+	
+		TO DO: Variavel Global Para Cargo. 
+
+	*/
+
 	//iniciando ou continuando uma session fica salva ate o usuario fechar o navegador
 	session_start();
 	date_default_timezone_set('America/Sao_paulo');
@@ -31,10 +37,10 @@
 	//Hostgator KLJcrash!987
 
 	//funcoes do painel
-	function pegaCargo($cargo){
+	function pegaCargo($indice){
 		//id de cada cargo
-		$arr = ['0' => 'normal','1' => 'sub admin','2' => 'administrador'];
-		return $arr[$cargo];
+
+		return Painel::$cargos[$indice];
 
 	}
 

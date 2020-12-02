@@ -14,6 +14,17 @@
 
 		}
 
+		public function adicionarUsuario($login,$nome,$senha,$cargo,$imagem){
+			$sql = Mysql::conectar()->prepare("INSERT INTO `tb-admin.usuarios` VALUES (null,?,?,?,?,?)");
+
+			if ($sql->execute(array($login,$nome,$senha,$cargo,$imagem)) {
+				return true;
+			}else{
+				return false;
+			}
+
+		}
+
 	}//class Usuario
 
 
