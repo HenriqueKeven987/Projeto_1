@@ -15,10 +15,10 @@
 
 		}
 
+
 		//preciassar ser instanciada pelo fato de nao ser estatica
 		public function adicionarUsuario($login,$senha,$imagem,$nome,$cargo){
 			$sql = Mysql::conectar()->prepare("INSERT INTO `tb-admin.usuarios` VALUES (null,?,?,?,?,?)");
-
 			if ($sql->execute(array($login,$senha,$imagem,$nome,$cargo))) {
 				return true;
 			}else{

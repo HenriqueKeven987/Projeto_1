@@ -110,6 +110,18 @@
 			@unlink(BASE_DIR_PAINEL.'/uploads/'.$file);
 		}
 		
+		public static function usuarioExiste($login){
+			$sql = Mysql::conectar()->prepare("SELECT * FROM `tb-admin.usuarios` WHERE usuario = ?");
+			$sql->execute(array($login));
+
+			if ($sql->rowCount() == 1) {
+				return true;
+			}else{
+				return false;
+			}
+
+		}
+
 	}
 
 
