@@ -51,9 +51,9 @@
 			<a <?php selecionadoMenu('listar-servicos'); ?> href="">Listar Serviços</a>
 			<a <?php selecionadoMenu('gerenciar-slides'); ?> href="">Gerenciar Slides</a>
 
-			<h2 <?php verificaPermicaoMenu(2); ?>>Administração do Painel</h2>
+			<h2>Administração do Painel</h2>
 
-			<a <?php selecionadoMenu('editar-usuario'); ?> <?php verificaPermicaoMenu(2);?> href="<?php echo INCLUDE_PATH_PAINEL?>editar-usuario">Editar Usuario</a>
+			<a <?php selecionadoMenu('editar-usuario'); ?> href="<?php echo INCLUDE_PATH_PAINEL?>editar-usuario">Editar Usuario</a>
 
 			<a <?php selecionadoMenu('adicionar-usuario'); ?> <?php verificaPermicaoMenu(2);?> href="<?php echo INCLUDE_PATH_PAINEL?>adicionar-usuario">Adicionar Usuario</a>
 

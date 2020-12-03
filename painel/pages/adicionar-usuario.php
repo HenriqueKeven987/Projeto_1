@@ -42,8 +42,9 @@
 							Painel::alertSuccess('erro','Usuario ja existe');
 					}else{
 						//podemos cadastrar no banco de dados
-						$usuario = new Usuario; 
-						//$usuario->adicionarUsuario($login,$senha,$imagem,$nome,$cargo);
+						$usuario = new Usuario;
+						$imagem = Painel::uploadFile($imagem); 
+						$usuario->adicionarUsuario($login,$senha,$imagem,$nome,$cargo);
 						Painel::alertSuccess('sucesso','O Cadastro de '.$nome.' foi feito com sucesso!');
 					}
 				}
