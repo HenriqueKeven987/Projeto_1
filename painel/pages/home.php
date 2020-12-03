@@ -10,7 +10,7 @@
 	
 	<div class="box-content w100">
 
-		<h2 class="h2-contents">Ocelo:Sobe Nao?</h2>
+		<h2 class="h2-contents"><i class="fas fa-home"></i> Painel</h2>
 		
 		<div class="box-metricas">
 

@@ -2,6 +2,7 @@
 
 	class Usuario{
 
+		//preciassar ser instanciada pelo fato de nao ser estatica
 		public function atualizarUsuario($nome,$senha,$imagem){
 
 			$sql = Mysql::conectar()->prepare("UPDATE `tb-admin.usuarios` SET nome = ?, senha = ?, img = ? WHERE usuario = ?");
@@ -14,6 +15,7 @@
 
 		}
 
+		//preciassar ser instanciada pelo fato de nao ser estatica
 		public function adicionarUsuario($login,$senha,$imagem,$nome,$cargo){
 			$sql = Mysql::conectar()->prepare("INSERT INTO `tb-admin.usuarios` VALUES (null,?,?,?,?,?)");
 

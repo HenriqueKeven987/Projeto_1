@@ -34,29 +34,19 @@
 					Painel::alertSuccess('erro','O Selecione uma imagem');
 				}else{
 					//Podemos continuar o Cadastro nunhum campo vazio
-					if (Painel::imagemValida($imagem)) {
-						//imagem valida
-							//falta fazer o upload da imagem
-							$imagem = Painel::uploadFile($imagem);
-							$usuario = new Usuario;
-
-						if ($usuario->adicionarUsuario($login,$senha,$imagem,$nome,$cargo)) {
-							Painel::alertSuccess('sucesso','usuario cadstrado com sucesso!');
-						}else{
-
-						}
-
+					if ($cargo >= $_SESSION['cargo']) {
+						Painel::alertSuccess('erro','voce nao tem autorirazao para colocar esse cargo');
+					}else if (Painel::imagemValida($imagem) == false) {
+						Painel::alertSuccess('erro','imagem nao E valida');
 					}else{
-						Painel::alertSuccess('erro','imagem no formato nao valido!');	
+						//podemos cadastrar no banco de dados
+						$usuario = new Usuario;
+						//$usuario->adicionarUsuario($login,$senha,$imagem,$nome,$cargo);
+						Painel::alertSuccess('sucesso','O Cadastro de '.$nome.' foi feito com sucesso!');
 					}
 				}
 
-
-				$usuario = new Usuario();
-
-
-
-			}
+			}//ACAO
 
 		?>
 
