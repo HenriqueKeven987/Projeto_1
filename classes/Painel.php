@@ -98,6 +98,7 @@
 		public static function uploadFile($file){
 
 			$formatoArquivo = explode('.', $file['nome']);
+
 			$imagemNome = $formatoArquivo[0];
 			if (move_uploaded_file($file['tmp_name'],BASE_DIR_PAINEL.'/uploads/'.$imagemNome)) 
 				return $imagemNome;
