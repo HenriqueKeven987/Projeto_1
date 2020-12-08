@@ -1,3 +1,25 @@
+<?php
+
+	if (isset($_COOKIE['Lembrar'])) {
+		//cookie buscando no banco o login e senha
+		$usuario = $_COOKIE['usuario'];
+		$senha = $_COOKIE['senha'];
+		$sql = Mysql::conectar()->prepare("SELECT * FROM `tb-admin.usuarios` WHERE usuario = ? AND senha = ?");
+		$sql->execute(array($usuario,$senha));
+		if ($sql->rowCount() == 1) {
+			//logado com sucesso
+			$info = $sql->fetch();
+			$_SESSION['login'] = true;
+			$_SESSION['usuario'] = $usuario;
+			$_SESSION['senha'] = $senha;
+			$_SESSION['cargo'] = $info['cargo'];
+			$_SESSION['nome'] = $info['nome'];
+			$_SESSION['img'] = $info['img'];
+		}
+	}	
+
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -22,7 +44,6 @@
 
 				if ($sql->rowCount() == 1) {
 					//logado com sucesso
-
 					$info = $sql->fetch();
 					$_SESSION['login'] = true;
 					$_SESSION['usuario'] = $usuario;
@@ -30,6 +51,13 @@
 					$_SESSION['cargo'] = $info['cargo'];
 					$_SESSION['nome'] = $info['nome'];
 					$_SESSION['img'] = $info['img'];
+
+					//cookie
+					if (isset($_POST['Lembrar'])) {
+						setcookie('Lembrar',true,time()+(60*60*24),'/');
+						setcookie('usuario',$usuario,time()+(60*60*24),'/');
+						setcookie('senha',$senha,time()+(60*60*24),'/');						
+					}
 					//header direcionamento php
 					header('location: '.INCLUDE_PATH_PAINEL);
 					die();
@@ -50,9 +78,16 @@
 			<input type="text" name="usuario" placeholder="Usuario" required>
 			
 			<input type="password" name="senha" placeholder="Senha" required>
-			
-			<input type="submit" name="acao" value="Logar">
 
+			<div class="form-group-login left">
+				<input type="submit" name="acao" value="Logar">
+			</div>
+
+			<div class="form-group-login right">
+				<label>Lembrar-Me</label>
+				<input type="checkbox" name="Lembrar"/>
+			</div>
+			<div class="clear"></div>
 		</form>
 
 	</div><!--div do painel-->

@@ -12,6 +12,7 @@
 		public static function loggout(){
 			//destruir todos os dados da seçao
 			session_destroy();
+			setcookie('Lembrar',true,time()-1,'/'); // '/' para todo o site
 			header('Location: '.INCLUDE_PATH_PAINEL);
 		}
 
@@ -96,15 +97,10 @@
 		//upload de arquivos
 		public static function uploadFile($file){
 
-<<<<<<< HEAD
-			$formatoArquivo = explode('.', $file['nome']);
-			$imagemNome = $formatoArquivo[0];
-=======
 			$formatoArquivo = explode('.', $file['name']);
 			//pegando o nome da imagem e transformando em um unico id
 			$imagemNome = uniqid().'.'.$formatoArquivo[count($formatoArquivo) - 1];
 
->>>>>>> d4121a440e8982cfbc56a01c5abf66c35b6a48f7
 			if (move_uploaded_file($file['tmp_name'],BASE_DIR_PAINEL.'/uploads/'.$imagemNome)) 
 				return $imagemNome;
 			else
