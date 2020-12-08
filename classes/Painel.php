@@ -115,6 +115,19 @@
 			//unlink deleta arquivos (diretorio,nome do arquivo)
 			@unlink(BASE_DIR_PAINEL.'/uploads/'.$file);
 		}
+
+		public static function adicionarDepoimento($arr){
+			$certo = true;
+			foreach ($arr as $key => $value) {
+				$nome = $key;
+				$valor = $value;
+				if ($certo == '') {
+				 	$certo = false;
+				 	break;	
+				} 
+			}
+			return $certo;
+		}
 		
 
 	}
