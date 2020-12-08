@@ -78,8 +78,7 @@
 		public static function imagemValida($imagem){
 			if ($imagem['type'] == 'image/jpeg' or
 				$imagem['type'] == 'image/jpg' or
-				$imagem['type'] == 'image/png') 
-			{				 
+				$imagem['type'] == 'image/png') {				 
 							//intval valor fica inteiro
 				$tamanho = intval($imagem['size']/1024);
 				//DOUBLE = 12.5;
@@ -98,7 +97,6 @@
 		public static function uploadFile($file){
 
 			$formatoArquivo = explode('.', $file['nome']);
-
 			$imagemNome = $formatoArquivo[0];
 			if (move_uploaded_file($file['tmp_name'],BASE_DIR_PAINEL.'/uploads/'.$imagemNome)) 
 				return $imagemNome;
