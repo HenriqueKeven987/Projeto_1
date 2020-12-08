@@ -72,7 +72,7 @@
 		</div><!--menu-btn-->
 
 		<div class="loggout">
-			<a href="<?php echo INCLUDE_PATH_PAINEL;?>"><i class="fas fa-home"><span> Pagina Inicial</span></i></a>
+			<a <?php if(@$_GET['url'] == ''){ ?> style="background:#538494;padding: 15px;"<?php } ?> href="<?php echo INCLUDE_PATH_PAINEL;?>"><i class="fas fa-home"><span> Pagina Inicial</span></i></a>
 			<a href="<?php echo INCLUDE_PATH_PAINEL;?>?loggout"><i class="fas fa-sign-out-alt"><span> Sair</span></i></a>
 		</div>
 	</div>

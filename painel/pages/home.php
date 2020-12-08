@@ -4,7 +4,7 @@
 
 	$usuariosVisitas = Painel::visitas();
 
-	$usuariosHoje = Painel::visitasHoje();
+	$usuariosHoje = Painel::visitasHoje(); 
 
 ?>
 	
@@ -40,8 +40,8 @@
 
 	</div><!--box-content w100-->
 
-	<div class="box-content w100">
-		<h2 class="h2-contents"><i class="fa fa-rocket"></i> Usuarios Online</h2>
+	<div class="box-content w50 left">
+		<h2 class="h2-contents"><i class="fa fa-rocket"></i> Usuarios Online no Site</h2>
 
 		<div class="table-responsive">
 
@@ -72,6 +72,56 @@
 				<div class="col">
 					<!--  date dps convertendo para o formato,strtotime converter em segundos-->
 					<span><?php echo date('d/m/Y H:i:s',strtotime($value['ultima_acao']));  ?></span>
+				</div><!--col-->
+
+				<div class="clear"></div>
+
+			</div><!--row-->
+
+		<?php } ?>
+
+		</div><!--table-responsive-->
+
+	</div><!--box-content-->
+
+	<div class="box-content w50 right">
+		<h2 class="h2-contents"><i class="fa fa-user"></i> Usuarios do Painel</h2>
+
+		<div class="table-responsive">
+
+			<div class="row">
+
+				<div class="col">
+					<span>Nome</span>
+				</div><!--col-->
+
+				<div class="col">
+					<span>Cargo</span>
+				</div><!--col-->
+
+				<div class="clear"></div>
+
+			</div><!--row-->
+
+			<!--repetindo a row-->
+			<?php
+
+				$usuariosPainel = Mysql::conectar()->prepare("SELECT * FROM `tb-admin.usuarios`");
+				$usuariosPainel->execute();
+				$usuariosPainel = $usuariosPainel->fetchAll();
+
+				foreach ($usuariosPainel as $key => $value) {
+				
+			 ?>
+			<div class="row">
+
+				<div class="col">
+					<span><?php echo $value['usuario']; ?></span>
+				</div><!--col-->
+
+				<div class="col">
+					<!--  date dps convertendo para o formato,strtotime converter em segundos-->
+					<span><?php echo pegaCargo($value['cargo']); ?></span>
 				</div><!--col-->
 
 				<div class="clear"></div>

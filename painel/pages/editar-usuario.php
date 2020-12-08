@@ -1,6 +1,6 @@
 
 <?php
-	verificaPermicaoPagina(2);
+	verificaPermicaoPagina(0);
 ?>
 
 <div class="box-content">

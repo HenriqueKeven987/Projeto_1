@@ -1,5 +1,5 @@
 <div class="box-content">
 	
-	<?php Painel::alertSuccess('erro','Voce nao Tem permicao para entrar nessa pagina!'); ?>
+	<?php Painel::alertSuccess('erro','Voce Nao Tem Permicao Para Entrar Nessa Pagina!'); ?>
 
 </div>

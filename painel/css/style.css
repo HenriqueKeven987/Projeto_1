@@ -74,7 +74,7 @@ body{
 .clear{clear: both;}
 
 .center{
-	padding: 2% 0;
+	padding:1px 0;
 	margin: 0 auto;
 }
 
@@ -240,7 +240,7 @@ div.menu{
 
 .h2-contents{
 	text-align: center;
-	
+	font-weight: 200;
 }
 
 /*Box Metricas*/
@@ -290,9 +290,7 @@ div.menu{
 
 .table-responsive .row:nth-of-type(1){
 	font-weight: bold;
-	border-bottom: 1px solid #333;
-	background:#00CED1; 
-	color:white;
+	border-bottom: 1px solid #333; 
 	font-size: 20px;
 }
 
@@ -388,7 +386,9 @@ a.menu-active{
 }
 
 .menu-active::before{
-	content: '> ';
+	/*
+		adicionar seta para quando estiver selecionado
+	*/
 }
 
 
