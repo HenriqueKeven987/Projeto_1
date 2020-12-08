@@ -93,7 +93,7 @@
 					$pagina404 = true;
 					include('pages/404.php');
 
-				}else{
+				}else{ 
 					include('pages/home.php');
 				}	
 			}

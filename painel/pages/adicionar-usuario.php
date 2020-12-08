@@ -38,7 +38,7 @@
 						Painel::alertSuccess('erro','voce nao tem autorirazao para colocar esse cargo');
 					}else if (Painel::imagemValida($imagem) == false) {
 						Painel::alertSuccess('erro','imagem nao E valida');
-					}else if (Painel::usuarioExiste($login)) {
+					}else if (Usuario::usuarioExiste($login)) {
 							Painel::alertSuccess('erro','Usuario ja existe');
 					}else{
 						//podemos cadastrar no banco de dados
