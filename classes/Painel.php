@@ -10,9 +10,11 @@
 		}
 
 		public static function loggout(){
+			setcookie('Lembrar',true,time()-3600,'/'); // '/' para todo o site
+
 			//destruir todos os dados da seçao
 			session_destroy();
-			setcookie('Lembrar',true,time()-1,'/'); // '/' para todo o site
+			
 			header('Location: '.INCLUDE_PATH_PAINEL);
 		}
 

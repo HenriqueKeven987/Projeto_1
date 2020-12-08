@@ -15,6 +15,8 @@
 			$_SESSION['cargo'] = $info['cargo'];
 			$_SESSION['nome'] = $info['nome'];
 			$_SESSION['img'] = $info['img'];
+			header('location: '.INCLUDE_PATH_PAINEL);
+			die();
 		}
 	}	
 
