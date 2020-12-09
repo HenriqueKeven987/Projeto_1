@@ -249,6 +249,39 @@ div.menu{
 	margin-bottom: 25px;
 }
 
+/*Tabelas de depoimentos*/
+
+table{
+	width: 100%;
+	margin: 20px 0;
+	border-collapse: collapse;
+}
+ 
+
+table tr:nth-of-type(1){
+	font-size: 20px;
+	font-weight: bold;
+	border-bottom: 1px solid #333; 
+}
+
+table tr{
+	border-bottom: 1px solid #555;	
+}
+
+table tr td{
+	padding: 10px;
+}
+
+table a.btn{
+	text-decoration: none;
+	border-radius: 10%;
+	padding: 6px;
+	color: white;
+}
+
+.edit{background: #F4B03E;}
+.delete{background: #E05C4E;}
+
 .h2-contents{
 	text-align: center;
 	font-weight: 200;
