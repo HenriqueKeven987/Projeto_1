@@ -1,7 +1,7 @@
 <?php
 	if(isset($_GET['loggout'])){
 		Painel::loggout();
-}
+	}
 ?>
 <!DOCTYPE html>
 <html>
@@ -47,7 +47,7 @@
 			<a <?php selecionadoMenu('cadastrar-slides'); ?> href="">Cadastrar slides</a>
 
 			<h2>Gestao</h2>
-			<a <?php selecionadoMenu('listar-depoimentos'); ?> href="">Listar Depoimento</a>
+			<a <?php selecionadoMenu('listar-depoimentos'); ?> href="<?php echo INCLUDE_PATH_PAINEL?>listar-depoimentos">Listar Depoimento</a>
 			<a <?php selecionadoMenu('listar-servicos'); ?> href="">Listar Serviços</a>
 			<a <?php selecionadoMenu('gerenciar-slides'); ?> href="">Gerenciar Slides</a>
 

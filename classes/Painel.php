@@ -143,8 +143,20 @@
 			}
 			return $certo;
 		}
-		
 
+		public static function listarDepoimentos(){
+
+			$depoimentos = Mysql::conectar()->prepare("SELECT * FROM `tb-site.depoimentos`");
+			$depoimentos->execute();
+			$infoDepo = $depoimentos->fetchAll();
+			return $infoDepo;
+
+			/*foreach ($infoDepo as $key => $value) {
+				echo $key;
+			}*/
+
+		}
+		
 	}
 
 
