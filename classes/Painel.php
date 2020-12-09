@@ -116,15 +116,30 @@
 			@unlink(BASE_DIR_PAINEL.'/uploads/'.$file);
 		}
 
+		//adicionando depoimento
 		public static function adicionarDepoimento($arr){
-			$certo = true;
+			$certo = true;			
+			$nome_tabela = $arr['nome_tabela'];
+			$query = "INSERT INTO `$nome_tabela` VALUES(null";
+
 			foreach ($arr as $key => $value) {
 				$nome = $key;
 				$valor = $value;
-				if ($certo == '') {
+				if ($nome == 'acao' or $value == $arr['nome_tabela']) 
+					continue;
+				if ($value == '') {
 				 	$certo = false;
 				 	break;	
-				} 
+				}
+				$query.=",?";
+				$parametros[] = $value;
+			}
+
+			$query.=")";
+
+			if ($certo == true) {			
+				$sql = Mysql::conectar()->prepare($query);
+				$sql->execute($parametros);
 			}
 			return $certo;
 		}

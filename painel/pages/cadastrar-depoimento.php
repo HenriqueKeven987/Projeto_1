@@ -15,9 +15,8 @@
 					Painel::alertSuccess('sucesso','Depoimento de '.$nome.' adicionado com sucesso!');
 
 				}else{
-					Painel::alertSuccess('erro','Ocorreu um erro ao cadastrar!');					
+					Painel::alertSuccess('erro','Campos Vazios Nao Sao Permitidos!');					
 				}
-
 				
 			}
 
@@ -28,19 +27,19 @@
 		<div class="form-group">
 
 			<label>Author: </label>
-			<input type="text" name="nome" required>
+			<input type="text" name="nome">
 
 		</div><!--form-group-->
 
 		<div class="form-group">
 
 			<label>Depoimento: </label>
-			<textarea name="depoimento" required></textarea>
+			<textarea name="depoimento"></textarea>
 
 		</div><!--form-group-->
 
 		<div class="form-group">
-
+			<input type="hidden" name="nome_tabela" value="tb-site.depoimentos">
 			<input type="submit" name="acao" value="Cadastrar!">
 
 		</div><!--form-group-->
