@@ -39,6 +39,13 @@
 		</div><!--form-group-->
 
 		<div class="form-group">
+
+			<label>Data: </label>
+			<input type="text" formato="data" name="data" value="<?php echo date('d/m/Y'); ?>">
+
+		</div><!--form-group-->
+
+		<div class="form-group">
 			<input type="hidden" name="nome_tabela" value="tb-site.depoimentos">
 			<input type="submit" name="acao" value="Cadastrar!">
 

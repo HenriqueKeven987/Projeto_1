@@ -93,7 +93,8 @@
 <div class="clear"></div>
 
 
-<script src="<?php echo INCLUDE_PATH ?>js/jquery.js"></script >
+<script src="<?php echo INCLUDE_PATH ?>js/jquery.js"></script>
+<script src="<?php echo INCLUDE_PATH ?>js/jquery.mask.js"></script>
 <script src="<?php echo INCLUDE_PATH_PAINEL ?>js/main.js"></script>
 
 

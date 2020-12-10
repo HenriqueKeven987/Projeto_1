@@ -144,18 +144,13 @@
 			return $certo;
 		}
 
-		public static function listarDepoimentos(){
+		public static function selectAll($tabela){
 
-			$depoimentos = Mysql::conectar()->prepare("SELECT * FROM `tb-site.depoimentos`");
-			$depoimentos->execute();
-			$infoDepo = $depoimentos->fetchAll();
-			return $infoDepo;
-
-			/*foreach ($infoDepo as $key => $value) {
-				echo $key;
-			}*/
-
-		}
+			$sql = Mysql::conectar()->prepare("SELECT * FROM `$tabela`");
+			$sql->execute();
+			return $sql->fetchAll();
+			
+		} 
 		
 	}
 
