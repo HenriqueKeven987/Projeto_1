@@ -1,7 +1,7 @@
 <?php
 	
 	$paginaAtual = isset($_GET['pagina']) ? (int)$_GET['pagina'] : 1;
-	$porPagina = 2;
+	$porPagina = 4;
 
 	$depoimentos = Painel::selectAll('tb-site.depoimentos',($paginaAtual - 1) * $porPagina,$porPagina);
 
@@ -24,17 +24,16 @@
 			<?php 
 				foreach ($depoimentos as $key => $value) {
 			?>
+				<tr>
+					<!--conteudo-->
+					<td><?php echo $value['nome']; ?></td>
+					<td><?php echo $value['depoimentos']; ?></td>
+					<td><?php echo $value['data']; ?></td>
+					<td><a class="btn edit" href=""><i class="fa fa-pencil-alt"></i> Editar</a></td>
+					<td><a class="btn delete" href=""><i class="fa fa-times"></i> Deletar</a></td>
+				</tr>
 
-			<tr>
-				<!--conteudo-->
-				<td><?php echo $value['nome']; ?></td>
-				<td><?php echo $value['depoimentos']; ?></td>
-				<td><?php echo $value['data']; ?></td>
-				<td><a class="btn edit" href=""><i class="fa fa-pencil-alt"></i> Editar</a></td>
-				<td><a class="btn delete" href=""><i class="fa fa-times"></i> Deletar</a></td>
-			</tr>
-
-		<?php } ?>
+			<?php } ?>
 		</table>
 	</div><!--whaper-table-->
 
@@ -54,6 +53,5 @@
 
 		?>
 	</div><!--paginacao-->
-
 
 </div><!--box-content-->
