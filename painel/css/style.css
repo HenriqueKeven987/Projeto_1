@@ -126,7 +126,7 @@ header{
 	
 }
 
-.menu-whaper{width: 250px;}
+.menu-whaper{width: 100%;}
 
 div.menu{
 	overflow-x: hidden;
@@ -136,7 +136,7 @@ div.menu{
 	position: fixed;
 	left: 0;
 	top: 0;
-	background: #008080;
+	background: #00BFFF;
 	float: left;
 	width: 300px;
 }
@@ -218,6 +218,9 @@ div.menu{
 
 /*conteudo principal do painel*/
 
+.whaper-table{
+	overflow-x: auto;
+}
 
 .w100{
 	width: 100%;
@@ -252,7 +255,9 @@ div.menu{
 /*Tabelas de depoimentos*/
 
 table{
+	font-weight: 300;
 	width: 100%;
+	min-width: 900px;
 	margin: 20px 0;
 	border-collapse: collapse;
 }
@@ -286,6 +291,29 @@ table a.btn{
 	text-align: center;
 	font-weight: 200;
 }
+
+/*paginacao*/
+
+.paginacao{
+	margin: 20px 0;
+	text-align: center;
+	
+}
+
+.paginacao a{
+	text-decoration: none;
+	font-size: 14px;
+	margin: 0 8px;
+	display: inline-block;
+	padding: 3px 4px;
+	border: 1px solid #ccc;
+	color: #666;
+}
+
+.paginacao a.page-select{
+	background: rgb(220,220,220);
+}
+
 
 /*Box Metricas*/
 
