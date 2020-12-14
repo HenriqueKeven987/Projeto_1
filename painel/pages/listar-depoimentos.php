@@ -1,9 +1,15 @@
 <?php
-	
+	//depoimentos por pagina
 	$paginaAtual = isset($_GET['pagina']) ? (int)$_GET['pagina'] : 1;
 	$porPagina = 4;
-
 	$depoimentos = Painel::selectAll('tb-site.depoimentos',($paginaAtual - 1) * $porPagina,$porPagina);
+
+	//excluir Registro
+	if (isset($_GET['excluir'])) {
+		$idExclur = intval($_GET['excluir']);
+		Painel::deletarRegistro('tb-site.depoimentos',$idExclur);	
+	}
+
 
 ?>
 
@@ -29,8 +35,8 @@
 					<td><?php echo $value['nome']; ?></td>
 					<td><?php echo $value['depoimentos']; ?></td>
 					<td><?php echo $value['data']; ?></td>
-					<td><a class="btn edit" href=""><i class="fa fa-pencil-alt"></i> Editar</a></td>
-					<td><a class="btn delete" href=""><i class="fa fa-times"></i> Deletar</a></td>
+					<td><a class="btn edit" href="<?php INCLUDE_PATH_PAINEL; ?>listar-depoimentos?Editar=<?php echo $value['id']; ?>"><i class="fa fa-pencil-alt"></i> Editar</a></td>
+					<td><a actionBtn="delete" class="btn delete" href="<?php INCLUDE_PATH_PAINEL; ?>listar-depoimentos?excluir=<?php echo $value['id']; ?>"><i class="fa fa-times"></i> Deletar</a></td>
 				</tr>
 
 			<?php } ?>

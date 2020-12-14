@@ -144,6 +144,7 @@
 			return $certo;
 		}
 
+		//paginacao de listamento
 		public static function selectAll($tabela,$start = null,$end = null){ 
 			if ($start == null and $end == null) 
 				$sql = Mysql::conectar()->prepare("SELECT * FROM `$tabela`");
@@ -153,7 +154,15 @@
 			$sql->execute();
 			return $sql->fetchAll();
 			
-		} 
+		}
+
+		//excluir Registro
+		public static function deletarRegistro($tabela,$idExcluir){
+			$sql = Mysql::conectar()->prepare("DELETE FROM `$tabela` WHERE id = ?");
+			$sql->execute(array($idExcluir));
+		}
+
+
 		
 	}
 

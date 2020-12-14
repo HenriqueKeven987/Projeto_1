@@ -16,6 +16,7 @@ $(function(){
 
 	}
 
+	//quando clicar no menu
 	$('.menu-btn').click(function(){
 
 		if (open) {
@@ -49,6 +50,7 @@ $(function(){
 	$(window).resize(function(){	
 
 		windowSize = $(window)[0].innerWidth;
+		targetSizeMenu = (windowSize <= 400) ? 200 :250;
 
 		if (windowSize <= 768) {
 
@@ -58,15 +60,30 @@ $(function(){
 
 		}else{
 
-			open = true;
-			$('.content, header').css('width', 'calc(100% - 250px)').css('left','250px');
-			$('.menu').css('width','250px').css('padding','10px');
+			$('.menu').animate({'width':targetSizeMenu+'px','padding':'10px 0'},function(){
+				open = true;
+			});
 
+			$('.content, header').css('width', 'calc(100% - 250px)');
+			$('.content, header').animate({'left':targetSizeMenu+'px'},function(){
+				open = true;
+			})
 		}
 
 	})
 
+
 	$('[formato=data]').mask('99/99/9999');
+
+	//caixa de confimaçao de excluir
+	$('[actionBtn=delete]').click(function(){
+		var r = confirm("Tem Certeza que Deseja Excluir?");
+		if (r == true) {
+		  return ;
+		}else{
+		  return false;
+		}
+	})
 
 
 })

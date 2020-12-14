@@ -92,6 +92,8 @@
 				},1000);
 
 				$('.container-principal').fadeIn(1000);
+				//versao evoluida do $_GET 
+				window.history.pushState('','',pagina);
 
 				return false;
 
