@@ -7,7 +7,8 @@
 	//excluir Registro
 	if (isset($_GET['excluir'])) {
 		$idExclur = intval($_GET['excluir']);
-		Painel::deletarRegistro('tb-site.depoimentos',$idExclur);	
+		Painel::deletarRegistro('tb-site.depoimentos',$idExclur);
+		Painel::redirect(INCLUDE_PATH_PAINEL.'listar-depoimentos');	
 	}
 
 
@@ -35,7 +36,7 @@
 					<td><?php echo $value['nome']; ?></td>
 					<td><?php echo $value['depoimentos']; ?></td>
 					<td><?php echo $value['data']; ?></td>
-					<td><a class="btn edit" href="<?php INCLUDE_PATH_PAINEL; ?>listar-depoimentos?Editar=<?php echo $value['id']; ?>"><i class="fa fa-pencil-alt"></i> Editar</a></td>
+					<td><a class="btn edit" href="<?php INCLUDE_PATH_PAINEL; ?>editar-depoimentos?id=<?php echo $value['id']; ?>"><i class="fa fa-pencil-alt"></i> Editar</a></td>
 					<td><a actionBtn="delete" class="btn delete" href="<?php INCLUDE_PATH_PAINEL; ?>listar-depoimentos?excluir=<?php echo $value['id']; ?>"><i class="fa fa-times"></i> Deletar</a></td>
 				</tr>
 

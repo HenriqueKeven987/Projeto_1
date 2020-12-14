@@ -162,6 +162,21 @@
 			$sql->execute(array($idExcluir));
 		}
 
+		public static function redirect($url){
+			echo '<script>location.href="'.$url.'" </script>';
+			die();
+		}
+
+		public function atualizarDepoimento($depoimentos,$data,$id){
+
+			$sql = Mysql::conectar()->prepare("UPDATE `tb-site.depoimentos` SET depoimentos = ?, data =  ?WHERE id = ?");
+			if($sql->execute(array($depoimentos,$data,$id))){
+				return true;
+			}else{
+				return false;
+			}
+
+		}
 
 		
 	}
