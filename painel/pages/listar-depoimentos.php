@@ -1,7 +1,7 @@
 <?php
 	//depoimentos por pagina
 	$paginaAtual = isset($_GET['pagina']) ? (int)$_GET['pagina'] : 1;
-	$porPagina = 4;
+	$porPagina = 8;
 	$depoimentos = Painel::selectAll('tb-site.depoimentos',($paginaAtual - 1) * $porPagina,$porPagina);
 
 	//excluir Registro
@@ -10,8 +10,6 @@
 		Painel::deletarRegistro('tb-site.depoimentos',$idExclur);
 		Painel::redirect(INCLUDE_PATH_PAINEL.'listar-depoimentos');	
 	}
-
-
 ?>
 
 <div class="box-content">

@@ -167,7 +167,13 @@
 			die();
 		}
 
-		public function atualizarDepoimento($depoimentos,$data,$id){
+		public static function select($tabela,$query,$arr){
+			$sql = Mysql::conectar()->prepare("SELECT * FROM `$tabela` WHERE $query");
+			$sql->execute($arr);
+			return $sql->fetch();
+		}
+
+		public static function atualizarDepoimento($depoimentos,$data,$id){
 
 			$sql = Mysql::conectar()->prepare("UPDATE `tb-site.depoimentos` SET depoimentos = ?, data =  ?WHERE id = ?");
 			if($sql->execute(array($depoimentos,$data,$id))){
