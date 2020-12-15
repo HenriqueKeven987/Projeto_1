@@ -144,6 +144,40 @@
 			return $certo;
 		}
 
+		//atualizar depoimentos
+		public static function updateDepoimento($arr,$id){
+			$certo = true;
+			$primeiro = false;			
+			$nome_tabela = $arr['nome_tabela'];
+			$query = "UPDATE `$nome_tabela` SET ";
+
+			foreach ($arr as $key => $value) {
+				$nome = $key;
+				$valor = $value;
+				if ($nome == 'acao' or $value == $nome_tabela) 
+					continue;
+				if ($value == '') {
+				 	$certo = false;
+				 	break;	
+				}
+				if ($primeiro == false) {
+					$primeiro = true;
+					$query.="$nome = ?";
+				}else{
+					$query.=",$nome = ?";
+				}
+				$parametros[] = $value;
+			}
+
+			$query .= " WHERE id = $id";
+
+			if ($certo == true) {			
+				$sql = Mysql::conectar()->prepare($query);
+				$sql->execute($parametros);
+			}
+			return $certo;
+		}
+
 		//paginacao de listamento
 		public static function selectAll($tabela,$start = null,$end = null){ 
 			if ($start == null and $end == null) 
@@ -173,10 +207,10 @@
 			return $sql->fetch();
 		}
 
-		public static function atualizarDepoimento($depoimentos,$data,$id){
+		public static function atualizarDepoimento($nome,$depoimentos,$data,$id){
 
-			$sql = Mysql::conectar()->prepare("UPDATE `tb-site.depoimentos` SET depoimentos = ?, data =  ?WHERE id = ?");
-			if($sql->execute(array($depoimentos,$data,$id))){
+			$sql = Mysql::conectar()->prepare("UPDATE `tb-site.depoimentos` SET nome = ?, depoimentos = ?, data =  ? WHERE id = ?");
+			if($sql->execute(array($nome,$depoimentos,$data,$id))){
 				return true;
 			}else{
 				return false;

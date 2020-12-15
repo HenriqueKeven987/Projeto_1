@@ -23,14 +23,15 @@
 		<?php
 
 			if (isset($_POST['acao'])) {
-				Painel::alertSuccess('sucesso','Depoimento Foi atualizado');
 
-				/*
-				if (Painel::atualizarDepoimento($depoimento,$data,$id)) {							
-					Painel::alertSuccess('sucesso','Depoimento Foi atualizado');
+				$nome = $_POST['nome'];
+
+				if (Painel::updateDepoimento($_POST,$id)) {
+					Painel::alertSuccess('sucesso','O Depoimento de '.$nome.' foi atualizado');
+					$depoimentos = Painel::select('tb-site.depoimentos','id = ?',array($id));		
 				}else{
-					Painel::alertSuccess('erro','Depoimento Nao Foi atualizado');
-				}*/
+					Painel::alertSuccess('erro','Ocorreu algum Erro');
+				}								
 			
 			}
 
@@ -39,26 +40,26 @@
 		<div class="form-group">
 
 			<label>Author:</label>
-			<input type="text" name="nome" value="<?php echo $depoimentos['nome']; ?>">
+			<input type="text" name="nome" required value="<?php echo $depoimentos['nome']; ?>">
 
 		</div><!--form-group-->
 
 		<div class="form-group">
 
 			<label>Depoimento: </label>
-			<textarea name="depoimento" required> <?php echo $depoimentos['depoimentos'];?></textarea>
+			<textarea name="depoimentos" required> <?php echo $depoimentos['depoimentos'];?></textarea>
 
 		</div><!--form-group-->
 
 		<div class="form-group">
 
 			<label>Data: </label>
-			<input type="text" formato="data" name="data" value="<?php echo $depoimentos['data']; ?>">
+			<input type="text" formato="data" name="data" required value="<?php echo date('d/m/Y'); ?>">
 
 		</div><!--form-group-->
 
 		<div class="form-group">
-
+			<input type="hidden" name="nome_tabela" value="tb-site.depoimentos">
 			<input type="submit" name="acao" value="Atualizar!">
 
 		</div><!--form-group-->
