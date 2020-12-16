@@ -6,7 +6,7 @@ $(function(){
 	//window puxando a key 0 funcoes nativas do js e innerWidth puxando a largura
 	var windowSize = $(window)[0].innerWidth;
 
-	var targetSizeMenu = (windowSize <= 668) ? 250 : 300;
+	var targetSizeMenu = (windowSize <= 768) ? 250 : 300;
 
 
 	if (windowSize <= 768) {
@@ -50,7 +50,7 @@ $(function(){
 	$(window).resize(function(){	
 
 		windowSize = $(window)[0].innerWidth;
-		targetSizeMenu = (windowSize <= 400) ? 200 :250;
+		targetSizeMenu = (windowSize <= 400) ? 200 : 250;
 
 		if (windowSize <= 768) {
 
@@ -79,7 +79,7 @@ $(function(){
 	$('[actionBtn=delete]').click(function(){
 		var r = confirm("Tem Certeza que Deseja Excluir?");
 		if (r == true) {
-		  return ;
+		  return;
 		}else{
 		  return false;
 		}
