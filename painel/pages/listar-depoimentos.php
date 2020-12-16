@@ -11,7 +11,7 @@
 		Painel::redirect(INCLUDE_PATH_PAINEL.'listar-depoimentos');
 
 	}else if(isset($_GET['order']) && isset($_GET['id'])) {
-		Painel::orderItem('tb-site.depoimentos',$_GET['order'],$_GET['id' ]);
+		Painel::orderItem('tb-site.depoimentos',$_GET['order'],$_GET['id']);
 		Painel::redirect(INCLUDE_PATH_PAINEL.'listar-depoimentos');	
 	}
 

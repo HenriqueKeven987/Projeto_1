@@ -59,6 +59,7 @@
 		</div><!--form-group-->
 
 		<div class="form-group">
+			<input type="hidden" name="id" value="<?php echo $id; ?>">
 			<input type="hidden" name="nome_tabela" value="tb-site.depoimentos">
 			<input type="submit" name="acao" value="Atualizar!">
 

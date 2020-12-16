@@ -149,7 +149,7 @@
 		}
 
 		//atualizar depoimentos
-		public static function update($arr){
+		public static function update($arr,$single = false){
 			$certo = true;
 			$primeiro = false;
 			$nome_tabela = $arr['nome_tabela'];
@@ -158,7 +158,7 @@
 			foreach ($arr as $key => $value) {
 				$nome = $key;
 				$valor = $value;
-				if ($nome == 'acao' or $nome == 'nome_tabela' or $nome == 'id') 
+				if ($nome == 'acao' || $nome == 'nome_tabela' || $nome == 'id') 
 					continue;
 				if ($value == '') {
 				 	$certo = false;
@@ -173,12 +173,18 @@
 				$parametros[] = $value;
 
 			}
-
-			if ($certo == true) {	
-				$parametros[] = $arr['id']; 		
-				$sql = Mysql::conectar()->prepare($query.' WHERE id = ?');
-				$sql->execute($parametros);
+			
+			if($certo == true){
+				if($single == false){
+					$parametros[] = $arr['id'];
+					$sql = MySql::conectar()->prepare($query.' WHERE id=?');
+					$sql->execute($parametros);
+				}else{
+					$sql = MySql::conectar()->prepare($query);
+					$sql->execute($parametros);
+				}
 			}
+			
 			return $certo;
 		}
 
@@ -224,25 +230,25 @@
 
 		public static function orderItem($tabela,$order,$id){
 			if ($order == 'up') {
-				$infoItemAtual = Painel::select($tabela,'id=?',array($id));
-				$order_id = $infoItemAtual['order_id'];
+				$itemAtual = Painel::select($tabela,'id=?',array($id));
+				$order_id = $itemAtual['order_id'];
 				$itemBefore = Mysql::conectar()->prepare("SELECT * FROM `$tabela` WHERE order_id < $order_id ORDER BY order_id DESC LIMIT 1");
 				$itemBefore->execute();
 				if ($itemBefore->rowCount() == 0) 
 					return;
 				$itemBefore= $itemBefore->fetch();				
-				Painel::update(array('nome_tabela'=>$tabela,'id'=>$itemBefore['id'],'order_id'=>$infoItemAtual['order_id']));
-				Painel::update(array('nome_tabela'=>$tabela,'id'=>$infoItemAtual['id'],'order_id'=>$itemBefore['order_id']));
+				Painel::update(array('nome_tabela'=>$tabela,'id'=>$itemBefore['id'],'order_id'=>$itemAtual['order_id']));
+				Painel::update(array('nome_tabela'=>$tabela,'id'=>$itemAtual['id'],'order_id'=>$itemBefore['order_id']));
 			}else if ($order == 'down') {
-				$infoItemAtual = Painel::select($tabela,'id=?',array($id));
-				$order_id = $infoItemAtual['order_id'];
+				$itemAtual = Painel::select($tabela,'id=?',array($id));
+				$order_id = $itemAtual['order_id'];
 				$itemAfter = Mysql::conectar()->prepare("SELECT * FROM `$tabela` WHERE order_id > $order_id ORDER BY order_id ASC LIMIT 1");
 				$itemAfter->execute();
 				if ($itemAfter->rowCount() == 0) 
 					return;
 				$itemAfter= $itemAfter->fetch();				
-				Painel::update(array('nome_tabela'=>$tabela,'id'=>$itemAfter['id'],'order_id'=>$infoItemAtual['order_id']));
-				Painel::update(array('nome_tabela'=>$tabela,'id'=>$infoItemAtual['id'],'order_id'=>$itemAfter['order_id']));
+				Painel::update(array('nome_tabela'=>$tabela,'id'=>$itemAfter['id'],'order_id'=>$itemAtual['order_id']));
+				Painel::update(array('nome_tabela'=>$tabela,'id'=>$itemAtual['id'],'order_id'=>$itemAfter['order_id']));
 			}
 		}
 
