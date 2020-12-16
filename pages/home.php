@@ -89,18 +89,17 @@
 	 	<div class="center">
 	 		<div id="depoimentos" class="w50 left depoimento-conteiner">
 	 			<h2 class="title">Depoimentos dos nossos clientes</h2>
-	 			<div class="depoimento-single">
-	 				<p class="depoimento-descricao">"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."</p>
-	 				<p class="nome-autor">Lorem Ipsum</p>
-	 			</div><!--depoimento-single-->
-	 			<div class="depoimento-single">
-	 				<p class="depoimento-descricao">"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."</p>
-	 				<p class="nome-autor">Lorem Ipsum</p>
-	 			</div><!--depoimento-single-->
-	 			<div class="depoimento-single">
-	 				<p class="depoimento-descricao">"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."</p>
-	 				<p class="nome-autor">Lorem Ipsum</p>
-	 			</div><!--depoimento-single-->
+	 				<?php 
+	 				$sql = Mysql::conectar()->prepare("SELECT * FROM `tb-site.depoimentos` ORDER BY order_id ASC LIMIT 3");
+	 				$sql->execute();
+	 				$depoimentos = $sql->fetchAll();
+	 				foreach ($depoimentos as $key => $value) {	 					
+	 				?>		
+			 			<div class="depoimento-single">
+			 				<p class="depoimento-descricao">"<?php echo $value['depoimentos']; ?>"</p>
+			 				<p class="nome-autor"><?php echo $value['nome']; ?> - <?php echo $value['data']; ?></p>
+			 			</div><!--depoimento-single-->
+	 			<?php } ?>
 	 		</div><!--Depoimentos-->
 
 	 		<div id="servicos" class="w50 left servicos-conteiner">

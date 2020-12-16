@@ -26,7 +26,7 @@
 
 				$nome = $_POST['nome'];
 
-				if (Painel::updateDepoimento($_POST,$id)) {
+				if (Painel::update($_POST)) {
 					Painel::alertSuccess('sucesso','O Depoimento de '.$nome.' foi atualizado');
 					$depoimentos = Painel::select('tb-site.depoimentos','id = ?',array($id));		
 				}else{

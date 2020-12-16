@@ -117,7 +117,7 @@
 		}
 
 		//adicionando depoimento
-		public static function adicionarDepoimento($arr){
+		public static function insert($arr){
 			$certo = true;			
 			$nome_tabela = $arr['nome_tabela'];
 			$query = "INSERT INTO `$nome_tabela` VALUES(null";
@@ -137,24 +137,28 @@
 
 			$query.=")";
 
-			if ($certo == true) {			
+			if ($certo == true) {
 				$sql = Mysql::conectar()->prepare($query);
 				$sql->execute($parametros);
+				$lastID = Mysql::conectar()->lastInsertId();
+				$sql = Mysql::conectar()->prepare("UPDATE `$nome_tabela` SET order_id = ? WHERE id = $lastID");
+				$sql->execute(array($lastID));
+				//lastInsertId() funçao do PDO que pega o ultimo id
 			}
 			return $certo;
 		}
 
 		//atualizar depoimentos
-		public static function updateDepoimento($arr,$id){
+		public static function update($arr){
 			$certo = true;
-			$primeiro = false;			
+			$primeiro = false;
 			$nome_tabela = $arr['nome_tabela'];
 			$query = "UPDATE `$nome_tabela` SET ";
 
 			foreach ($arr as $key => $value) {
 				$nome = $key;
 				$valor = $value;
-				if ($nome == 'acao' or $value == $nome_tabela) 
+				if ($nome == 'acao' or $nome == 'nome_tabela' or $nome == 'id') 
 					continue;
 				if ($value == '') {
 				 	$certo = false;
@@ -167,12 +171,12 @@
 					$query.=",$nome = ?";
 				}
 				$parametros[] = $value;
+
 			}
 
-			$query .= " WHERE id = $id";
-
-			if ($certo == true) {			
-				$sql = Mysql::conectar()->prepare($query);
+			if ($certo == true) {	
+				$parametros[] = $arr['id']; 		
+				$sql = Mysql::conectar()->prepare($query.' WHERE id = ?');
 				$sql->execute($parametros);
 			}
 			return $certo;
@@ -181,9 +185,9 @@
 		//paginacao de listamento
 		public static function selectAll($tabela,$start = null,$end = null){ 
 			if ($start == null and $end == null) 
-				$sql = Mysql::conectar()->prepare("SELECT * FROM `$tabela`");
+				$sql = Mysql::conectar()->prepare("SELECT * FROM `$tabela` ORDER BY order_id ASC");
 			else
-				$sql = Mysql::conectar()->prepare("SELECT * FROM `$tabela` LIMIT $start,$end");
+				$sql = Mysql::conectar()->prepare("SELECT * FROM `$tabela` ORDER BY order_id ASC LIMIT $start,$end");
 			
 			$sql->execute();
 			return $sql->fetchAll();
@@ -216,6 +220,30 @@
 				return false;
 			}
 
+		}
+
+		public static function orderItem($tabela,$order,$id){
+			if ($order == 'up') {
+				$infoItemAtual = Painel::select($tabela,'id=?',array($id));
+				$order_id = $infoItemAtual['order_id'];
+				$itemBefore = Mysql::conectar()->prepare("SELECT * FROM `$tabela` WHERE order_id < $order_id ORDER BY order_id DESC LIMIT 1");
+				$itemBefore->execute();
+				if ($itemBefore->rowCount() == 0) 
+					return;
+				$itemBefore= $itemBefore->fetch();				
+				Painel::update(array('nome_tabela'=>$tabela,'id'=>$itemBefore['id'],'order_id'=>$infoItemAtual['order_id']));
+				Painel::update(array('nome_tabela'=>$tabela,'id'=>$infoItemAtual['id'],'order_id'=>$itemBefore['order_id']));
+			}else if ($order == 'down') {
+				$infoItemAtual = Painel::select($tabela,'id=?',array($id));
+				$order_id = $infoItemAtual['order_id'];
+				$itemAfter = Mysql::conectar()->prepare("SELECT * FROM `$tabela` WHERE order_id > $order_id ORDER BY order_id ASC LIMIT 1");
+				$itemAfter->execute();
+				if ($itemAfter->rowCount() == 0) 
+					return;
+				$itemAfter= $itemAfter->fetch();				
+				Painel::update(array('nome_tabela'=>$tabela,'id'=>$itemAfter['id'],'order_id'=>$infoItemAtual['order_id']));
+				Painel::update(array('nome_tabela'=>$tabela,'id'=>$infoItemAtual['id'],'order_id'=>$itemAfter['order_id']));
+			}
 		}
 
 		

@@ -10,7 +10,7 @@
 
 			if (isset($_POST['acao'])) {
 				
-				if (Painel::adicionarDepoimento($_POST)) {
+				if (Painel::insert($_POST)) {
 					$nome = $_POST['nome'];
 					Painel::alertSuccess('sucesso','Depoimento de '.$nome.' adicionado com sucesso!');
 
@@ -46,6 +46,7 @@
 		</div><!--form-group-->
 
 		<div class="form-group">
+			<input type="hidden" name="order_id" value="0">
 			<input type="hidden" name="nome_tabela" value="tb-site.depoimentos">
 			<input type="submit" name="acao" value="Cadastrar!">
 
