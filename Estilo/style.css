@@ -281,13 +281,13 @@ p.nome-autor{
 }
 
 .servicos ul{
-	margin:20px 0;
+	margin:20px;
 	
 }
 
 .servicos li{
-	margin-bottom: 15px;
-	font-size: 15px;
+	margin-bottom: 20px;
+	font-size: 25px;
 	color: white;
 	font-weight: 300;
 }

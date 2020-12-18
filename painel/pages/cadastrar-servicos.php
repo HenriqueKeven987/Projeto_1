@@ -8,33 +8,20 @@
 
 		<?php
 
-			if (isset($_POST['acao'])) {
-
-				$nome = $_POST['nome'];
-				
+			if (isset($_POST['acao'])) {	
 				if (Painel::insert($_POST)) {
-					Painel::alertSuccess('sucesso','O Serviço '.$nome.' Foi Cadastrado!');
+					Painel::alertSuccess('sucesso','O Serviço Foi Cadastrado!');
 				}else{
-					Painel::alertSuccess('erro','O Serviço '.$nome.' Não Foi Cadastrado!');
+					Painel::alertSuccess('erro','O Serviço Não Foi Cadastrado!');
 				}
-
 			}
-
 		?>
 
 		<!--formulario do depoimento-->
 		
-
 		<div class="form-group">
 
-			<label>Nome do Serviço: </label>
-			<input type="text" name="nome">
-
-		</div><!--form-group-->
-
-		<div class="form-group">
-
-			<label>Serviço </label>
+			<label>Descreva o Serviço: </label>
 			<textarea name="servicos"></textarea>
 
 		</div><!--form-group-->
@@ -47,6 +34,5 @@
 		</div><!--form-group-->
 
 	</form><!--formulario do depoimento-->
-
 
 </div><!--box-content-->

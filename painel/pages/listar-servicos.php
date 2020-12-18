@@ -25,8 +25,7 @@
 	<div class="whaper-table">
 		<table>
 			<tr>
-				<td>Nome</td>
-				<td>servicos</td>
+				<td>Servicos</td>
 				<td>#</td>
 				<td>#</td>
 				<td>#</td>
@@ -38,7 +37,6 @@
 			?>
 				<tr>
 					<!--conteudo-->
-					<td><?php echo $value['nome']; ?></td>
 					<td><?php echo $value['servicos']; ?></td>
 					<td><a class="btn edit" href="<?php INCLUDE_PATH_PAINEL; ?>editar-servicos?id=<?php echo $value['id']; ?>"><i class="fa fa-pencil-alt"></i> Editar</a></td>
 					<td><a actionBtn="delete" class="btn delete" href="<?php INCLUDE_PATH_PAINEL; ?>listar-servicos?excluir=<?php echo $value['id']; ?>"><i class="fa fa-times"></i> Deletar</a></td>

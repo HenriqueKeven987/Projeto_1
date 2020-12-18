@@ -106,11 +106,15 @@
 	 			<h2 class="title">Serviços</h2>
 	 			<div class="servicos">
 		 			<ul>
-		 				<li>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.</li>
+		 				<?php
+		 					$sql = Mysql::conectar()->prepare("SELECT * FROM `tb-site.servicos` ORDER BY order_id ASC LIMIT 3");
+		 					$sql->execute();
+		 					$servicos = $sql->fetchAll();
+		 					foreach ($servicos as $key => $value) {
+		 				?>
+		 				<li><?php echo $value['servicos']; ?> </li>
 
-		 				<li>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.</li>
-
-		 				<li>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.</li>
+		 				<?php } ?>
 		 			</ul>
 		 		</div><!--servicos-->
 	 		</div><!--w50-->

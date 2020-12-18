@@ -24,25 +24,15 @@
 
 			if (isset($_POST['acao'])) {
 
-				$nome = $_POST['nome'];
-
 				if (Painel::update($_POST)) {
-					Painel::alertSuccess('sucesso','O Serviços de '.$nome.' foi atualizado');
+					Painel::alertSuccess('sucesso','O Serviços foi atualizado');
 					$servicos = Painel::select('tb-site.servicos','id = ?',array($id));		
 				}else{
 					Painel::alertSuccess('erro','Ocorreu algum Erro');
 				}								
-			
 			}
 
 		?>
-	
-		<div class="form-group">
-
-			<label>Nome do Serviço: </label>
-			<input type="text" name="nome" required value="<?php echo $servicos['nome']; ?>">
-
-		</div><!--form-group-->
 
 		<div class="form-group">
 
