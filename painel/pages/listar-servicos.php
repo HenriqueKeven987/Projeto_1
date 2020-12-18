@@ -20,7 +20,7 @@
 
 <div class="box-content">
 
-	<h2 class=""><i class="fas fa-id-card"></i> servicos Cadastrado</h2>
+	<h2 class=""><i class="fas fa-id-card"></i> Servicos Cadastrado</h2>
 
 	<div class="whaper-table">
 		<table>
