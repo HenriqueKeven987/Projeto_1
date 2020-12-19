@@ -32,7 +32,7 @@
 		<div class="form-group">
 
 			<label>Nome do slide:</label>
-			<input type="text" name="nome" />
+			<input type="text" name="nome" required/>
 
 		</div><!--form-group-->
 
@@ -40,12 +40,11 @@
 		<div class="form-group">
 
 			<label>Imagem:</label>
-			<input type="file" name="imagem" />
+			<input type="file" name="imagem" required/>
 
 		</div><!--form-group-->	
 
 		<div class="form-group">
-
 
 			<input type="submit" name="acao" value="Cadastrar!">			
 
