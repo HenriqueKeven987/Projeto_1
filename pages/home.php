@@ -44,11 +44,9 @@
 		<div class="center">
 			<div class="w50 left">
 
-				<h2>Henrique K. Sousa</h2>
+				<h2><?php echo $infoSite['nome_author']; ?></h2>
 
-				<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-
-				<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+				<p><?php echo $infoSite['descricao']; ?></p>
 			</div><!--w50-->
 		
 			<div class="w50 left">
@@ -64,21 +62,21 @@
 	 	<div class="center">
 	 		<h2 class="title">Especialidades</h2>
 	 		<div class="w33 left box-especialidades">
-	 			<h3><i class="fab fa-css3"></i></h3>
+	 			<h3><i class="<?php echo $infoSite['icone1'];?>"></i></h3>
 	 			<h4>CSS3</h4>
-	 			<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+	 			<p><?php echo $infoSite['descricao1'];?></p>
 	 		</div><!--especialidades-->
 
 	 		<div class="w33 left box-especialidades">
-	 			<h3><i class="fab fa-html5"></i></h3>
+	 			<h3><i class="<?php echo $infoSite['icone2'];?>"></i></h3>
 	 			<h4>HTML5</h4>
-	 			<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+	 			<p><?php echo $infoSite['descricao2'];?></p>
 	 		</div><!--especialidades-->
 
 	 		<div class="w33 left box-especialidades">
-	 			<h3><i class="fab fa-js"></i></h3>
+	 			<h3><i class="<?php echo $infoSite['icone3'];?>"></i></h3>
 	 			<h4>JavaScript</h4>
-	 			<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+	 			<p><?php echo $infoSite['descricao3'];?></p>
 	 		</div><!--especialidades-->
 	 		<div class="clear"></div>
 	 	</div><!--center-->
@@ -93,6 +91,7 @@
 	 				$sql = Mysql::conectar()->prepare("SELECT * FROM `tb-site.depoimentos` ORDER BY order_id ASC LIMIT 3");
 	 				$sql->execute();
 	 				$depoimentos = $sql->fetchAll();
+
 	 				foreach ($depoimentos as $key => $value) {	 					
 	 				?>		
 			 			<div class="depoimento-single">
@@ -110,10 +109,10 @@
 		 					$sql = Mysql::conectar()->prepare("SELECT * FROM `tb-site.servicos` ORDER BY order_id ASC LIMIT 3");
 		 					$sql->execute();
 		 					$servicos = $sql->fetchAll();
+
 		 					foreach ($servicos as $key => $value) {
 		 				?>
-		 				<li><?php echo $value['servicos']; ?> </li>
-
+		 					<li><?php echo $value['servicos']; ?> </li>		 					
 		 				<?php } ?>
 		 			</ul>
 		 		</div><!--servicos-->

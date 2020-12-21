@@ -59,7 +59,7 @@
 			<a <?php selecionadoMenu('adicionar-usuario'); ?> <?php verificaPermicaoMenu(2);?> href="<?php echo INCLUDE_PATH_PAINEL?>adicionar-usuario">Adicionar Usuario</a>
 
 			<h2>Configuraçao geral</h2>
-			<a <?php selecionadoMenu('editar-site'); ?> href="">Editar Site</a>
+			<a <?php selecionadoMenu('editar-site'); ?> href="<?php echo INCLUDE_PATH_PAINEL?>editar-site">Editar Site</a>
 
 		</div><!--items--menu-->
 	</div><!--menu-whaper-->

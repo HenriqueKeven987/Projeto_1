@@ -1,10 +1,19 @@
 <?php include('config.php'); ?>
 <?php Site::updateUsuarioOnline();?>
 <?php Site::contador();?>
+
+<?php 
+
+	$infoSite = Mysql::conectar()->prepare("SELECT * FROM `tb-site.painel`");
+	$infoSite->execute();
+	$infoSite = $infoSite->fetch();
+
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Projeto 01</title>
+	<title><?php echo $infoSite['titulo']; ?></title>
 	<link href="<?php echo INCLUDE_PATH; ?>Estilo/css/all.css" rel="stylesheet"/>
 	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:300,400,700" rel="stylesheet"/>
 	<link rel="stylesheet" type="text/css" href="<?php echo INCLUDE_PATH;?>Estilo/style.css"/>
