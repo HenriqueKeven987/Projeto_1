@@ -44,13 +44,13 @@
 			<h2>Cadastro</h2>
 			<a <?php selecionadoMenu('cadastrar-depoimento'); ?> href="<?php echo INCLUDE_PATH_PAINEL?>cadastrar-depoimento">Cadastrar Depoimento</a>
 			<a <?php selecionadoMenu('cadastrar-servicos'); ?> href="<?php echo INCLUDE_PATH_PAINEL?>cadastrar-servicos">Cadastro Serviços</a>
-			<a <?php selecionadoMenu('cadastrar-slide'); ?> href="<?php echo INCLUDE_PATH_PAINEL?>cadastrar-slide">Cadastrar slides</a>
+			<a <?php selecionadoMenu('cadastrar-slides'); ?> href="<?php echo INCLUDE_PATH_PAINEL?>cadastrar-slides">Cadastrar slides</a>
 
 			<h2>Gestao</h2>
 
 			<a <?php selecionadoMenu('listar-depoimentos'); ?> href="<?php echo INCLUDE_PATH_PAINEL?>listar-depoimentos">Listar Depoimento</a>
 			<a <?php selecionadoMenu('listar-servicos'); ?> href="<?php echo INCLUDE_PATH_PAINEL?>listar-servicos">Listar Serviços</a>
-			<a <?php selecionadoMenu('gerenciar-slides'); ?> href="<?php echo INCLUDE_PATH_PAINEL?>gerenciar-slides">Gerenciar Slides</a>
+			<a <?php selecionadoMenu('listar-slides'); ?> href="<?php echo INCLUDE_PATH_PAINEL?>listar-slides">listar Slides</a>
 
 			<h2>Administração do Painel</h2>
 

@@ -20,7 +20,7 @@
 						Painel::alertAccess('erro','A imagem nao e valida');	
 					}else{
 						$imagem = Painel::uploadFile($imagem);
-						$array = ['nome'=>$nome,'nome_tabela'=>'tb-site.slide','slide'=>$imagem,'order_id'=>1];
+						$array = ['nome'=>$nome,'slide'=>$imagem,'order_id'=>'0','nome_tabela'=>'tb-site.slide',];
 						Painel::insert($array);
 						Painel::alertSuccess('sucesso','Cadastro de Slide realizado com sucesso!'); 
 					}
