@@ -19,7 +19,10 @@
 					if (Painel::imagemValida($imagem) == false) {
 						Painel::alertAccess('erro','A imagem nao e valida');	
 					}else{
+						include('../classes/lib/WideImage.php');						
 						$imagem = Painel::uploadFile($imagem);
+						//load, rezise e saveToFile Funçao da lib WideImage
+						WideImage::load('uploads/'.$imagem)->resize(100)->saveToFile('uploads/'.$imagem);
 						$array = ['nome'=>$nome,'slide'=>$imagem,'order_id'=>'0','nome_tabela'=>'tb-site.slide',];
 						Painel::insert($array);
 						Painel::alertSuccess('sucesso','Cadastro de Slide realizado com sucesso!'); 
