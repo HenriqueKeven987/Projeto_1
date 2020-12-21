@@ -6,6 +6,7 @@
 		$id = intval($_GET['id']);
 		$slide = Painel::select('tb-site.slide','id = ?',array($id));		
 	}else{
+		$slide = Painel::select('tb-site.slide','id = ?',array($id));
 		Painel::alertSuccess('erro','Voce Precissa Passar o id');
 		die();
 	}
@@ -33,8 +34,8 @@
 
 					if(Painel::imagemValida($imagem)){
 						Painel::deleteFile($imagem_atual);
-						Painel::uploadFile($imagem);
-						$arr = ['id'=>$id,'nome'=>$nome,'slide'=>$imagem,'nome_tabela'=>'tb-site.slide'];
+						$imagem = Painel::uploadFile($imagem);
+						$arr = ['nome'=>$nome,'slide'=>$imagem,'nome_tabela'=>'tb-site.slide','id'=>$id];
 						if (Painel::update($arr)) {
 							Painel::alertSuccess('sucesso','Slide Atualizado com Sucesso!');
 						}else{
@@ -44,17 +45,15 @@
 						Painel::alertSuccess('erro',' A Imagem Não E Valida!');
 					}						
 				}else{
-					$imagem = $imagem_atual;
-					$arr = ['id'=>$id,'nome'=>$nome,'slide'=>$imagem,'nome_tabela'=>'tb-site.slide'];
+					//$imagem = $imagem_atual;
+					$arr = ['nome'=>$nome,'nome_tabela'=>'tb-site.slide','id'=>$id];
 					if (Painel::update($arr)) {
 						Painel::alertSuccess('sucesso','Nome do Slide Atualizado com Sucesso!');
 					}else{
 						Painel::alertSuccess('erro','Ocorreu algum erro!');
 					}
 				}
-
 			}
-
 		?>
 		
 		<div class="form-group">
