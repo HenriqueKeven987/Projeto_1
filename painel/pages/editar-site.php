@@ -2,12 +2,9 @@
 	
 <?php 
 
-	$infoSite = Mysql::conectar()->prepare("SELECT * FROM `tb-site.painel`");
-	$infoSite->execute();
-	$site = $infoSite->fetch();
+	$site = Painel::select('tb-site.painel');
 
 ?>
-
 
 <div class="box-content">
 
@@ -18,39 +15,15 @@
 		<?php
 
 			if (isset($_POST['acao'])) {
-				$certo = true;
-				$primeiro = false;
-				$nome_tabela = $_POST['nome_tabela'];
-
-				$query = "UPDATE `$nome_tabela` SET ";
-
-				foreach ($_POST as $key => $value) {
-
-					if ($key == 'acao' or $key == 'nome_tabela') 
-						continue;
-					
-					if ($key == '') {
-						Painel::alertSuccess('erro','O '.$key.' Esta Vazio!');
-						$certo = false;
-						break;						
-					}
-
-					if ($primeiro == false) {
-						$primeiro = true;
-						$query.="$key = ?";
-					}else{
-						$query.=",$key = ?";
-					}
-
-					$parametros[] = $value;
-
+				
+				if (Painel::update($_POST,true)) {
+					Painel::alertSuccess('sucesso','Atualizaçao de Site Feita Com Sucesso!');					
+					$site = Painel::select('tb-site.painel');
+				}else{
+					Painel::alertSuccess('erro','Algum Campo Esta Vazio');
 				}
 
-				if($certo == true){
-						$sql = MySql::conectar()->prepare($query);
-						$sql->execute($parametros);
-				}
-												
+																
 			}
 
 		?>
@@ -58,14 +31,14 @@
 		<div class="form-group">
 
 			<label>Titulo</label>
-			<input type="text" name="titulo" value="<?php echo $site['titulo'];?>" >
+			<input type="text" name="titulo" value="<?php echo $site['titulo'];?>">
 
 		</div><!--form-group-->
 
 		<div class="form-group">
 
 			<label>Nome Do Author</label>
-			<input type="text" name="nome_author" value="<?php echo $site['nome_author']; ?>">
+			<input type="text" name="nome_author" value="<?php echo $site['nome_author'];?>">
 
 		</div><!--form-group-->
 
@@ -79,7 +52,7 @@
 		<div class="form-group">
 
 			<label>icone 1</label>
-			<input type="text" name="icone1" value="<?php echo $site['icone1']; ?>">  
+			<input type="text" name="icone1" value="<?php echo $site['icone1'];?>">  
 
 		</div><!--form-group-->		
 

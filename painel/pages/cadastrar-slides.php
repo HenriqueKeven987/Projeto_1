@@ -14,10 +14,10 @@
 				$imagem = $_FILES['imagem'];
 
 				if ($nome == '') {
-					Painel::alertAccess('erro','Nome do Slide nao Foi especificado!');
+					Painel::alertSuccess('erro','Nome do Slide nao Foi especificado!');
 				}else{
 					if (Painel::imagemValida($imagem) == false) {
-						Painel::alertAccess('erro','A imagem nao e valida');	
+						Painel::alertSuccess('erro','A imagem nao e valida');	
 					}else{
 						include('../classes/lib/WideImage.php');						
 						$imagem = Painel::uploadFile($imagem);
