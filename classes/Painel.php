@@ -96,6 +96,16 @@
 			}
 		}
 
+		public static function tipoImagem($imagem){
+			if ($imagem['type'] == 'image/jpeg' or
+				$imagem['type'] == 'image/jpg' or
+				$imagem['type'] == 'image/png') {
+				return true;
+			}else{
+				return false;
+			}		
+		}
+
 		//upload de arquivos
 		public static function uploadFile($file){
 

@@ -16,13 +16,15 @@
 				if ($nome == '') {
 					Painel::alertSuccess('erro','Nome do Slide nao Foi especificado!');
 				}else{
-					if (Painel::imagemValida($imagem) == false) {
+
+					if (Painel::tipoImagem($imagem) == false) {
 						Painel::alertSuccess('erro','A imagem nao e valida');	
-					}else{
+					}
+					else{
 						include('../classes/lib/WideImage.php');						
 						$imagem = Painel::uploadFile($imagem);
 						//load, rezise e saveToFile Funçao da lib WideImage
-						WideImage::load('uploads/'.$imagem)->resize(100)->saveToFile('uploads/'.$imagem);
+						WideImage::load('uploads/'.$imagem)->resize(1200)->saveToFile('uploads/'.$imagem);
 						$array = ['nome'=>$nome,'slide'=>$imagem,'order_id'=>'0','nome_tabela'=>'tb-site.slide',];
 						Painel::insert($array);
 						Painel::alertSuccess('sucesso','Cadastro de Slide realizado com sucesso!'); 

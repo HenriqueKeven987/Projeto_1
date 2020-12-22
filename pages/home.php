@@ -1,14 +1,21 @@
  
+<?php
+	$sql = Mysql::conectar()->prepare("SELECT * FROM `tb-site.slide` LIMIT 3 ORDER BY order_id ASC");
+	$sql->execute();
+	$sql = $sql->fetch();
+	$slides = $sql;
+?>
+
 	<!---banner inicial-->
 	<section class="banner-container">
 
-		<div style="background-image: url('<?php echo INCLUDE_PATH;?>imagens/watch.dogs.jpg');" class="banner-single"></div><!--banner single-->
+		<?php foreach ($slides as $key => $value) {
+			
+		?>
 
-		<div style="background-image: url('<?php echo INCLUDE_PATH;?>imagens/watch.dogs(1).jpg');" class="banner-single"></div><!--banner single-->
+		<div class="banner-single"><img src="<?php echo INCLUDE_PATH_PAINEL; ?>uploads/<?php echo $slides['slide']; ?>"></div><!--banner single-->
 
-		<div style="background-image: url('<?php echo INCLUDE_PATH?>imagens/watch.dogs(2).jpg');" class="banner-single"></div><!--banner single-->
-
-
+		<?php } ?> 
 
 		<div class="overlay"></div><!--overlay-->
 
