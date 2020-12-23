@@ -1,26 +1,22 @@
  
 <?php
-	$sql = Mysql::conectar()->prepare("SELECT * FROM `tb-site.slide` LIMIT 3 ORDER BY order_id ASC");
+	$sql = Mysql::conectar()->prepare("SELECT slide FROM `tb-site.slide` ORDER BY order_id ASC LIMIT 3");
 	$sql->execute();
-	$sql = $sql->fetch();
-	$slides = $sql;
+	$slides = $sql->fetchAll();
 ?>
 
 	<!---banner inicial-->
 	<section class="banner-container">
 
-		<?php foreach ($slides as $key => $value) {
-			
-		?>
+		<?php foreach ($slides as $key => $value) {	?>
 
-		<div class="banner-single"><img src="<?php echo INCLUDE_PATH_PAINEL; ?>uploads/<?php echo $slides['slide']; ?>"></div><!--banner single-->
+		<img class="banner-single" src="<?php echo INCLUDE_PATH_PAINEL;?>uploads/<?php echo $value['slide']; ?>"><!--banner single-->
 
 		<?php } ?> 
 
 		<div class="overlay"></div><!--overlay-->
 
 		<div class="center">
-
 
 		<form method="post">
 
