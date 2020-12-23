@@ -24,7 +24,7 @@ $(function(){
 				bullets+= '<span classe="active-slider"></span>';
 
 			else
-				bullets+= '<span></span>';			
+				bullets+= '<span></span>';		
 
 			$('.bullets').html(bullets);
 		}
