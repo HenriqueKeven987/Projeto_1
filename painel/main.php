@@ -84,9 +84,7 @@
 <div class="content">
 
 <?php
-		
 	Painel::carregarPagina();
-
 ?>
 
 </div><!--content-->

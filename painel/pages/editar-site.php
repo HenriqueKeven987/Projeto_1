@@ -1,9 +1,7 @@
  
 	
 <?php 
-
 	$site = Painel::select('tb-site.painel');
-
 ?>
 
 <div class="box-content">
