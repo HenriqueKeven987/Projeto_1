@@ -1,4 +1,5 @@
 
+
 //estados dos arquivos no git
 nao monitorado == nao esta no repositorio local mas esta na mesma pasta do repositorio .git
 modificado == foi adicionado ao .git local mais foi alterado
